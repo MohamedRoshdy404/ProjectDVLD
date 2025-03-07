@@ -117,14 +117,6 @@ namespace ProjectDVLD.People
         }
 
 
-
-
-
-
-
-
-
-
         private void _FillCountriesIncomboBox()
         {
             DataTable dtCountries = clsCountriesBuisnessLayer.GetAllCountries();
