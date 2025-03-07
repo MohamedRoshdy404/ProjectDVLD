@@ -73,6 +73,27 @@ namespace DVLD_Buisness
 
 
 
+        public clsPersonBuisnessLayer(int PersonID , string NationalNo, string FirstName, string SecondName, string ThirdName, string LastName, DateTime DateOfBirth, byte Gender, string Address, string Phone, string Email, int NationalityCountryID, string ImagePath)
+        {
+            this.PersonID = PersonID;
+            this.NationalNo = NationalNo;
+            this.FirstName = FirstName;
+            this.SecondName = SecondName;
+            this.ThirdName = ThirdName;
+            this.LastName = LastName;
+            this.DateOfBirth = DateOfBirth;
+            this.Gender = Gender;
+            this.Address = Address;
+            this.Phone = Phone;
+            this.Email = Email;
+            this.NationalityCountryID = NationalityCountryID;
+            this.ImagePath = ImagePath;
+
+            Mode = enMode.Update;
+        }
+
+
+
 
 
 
@@ -84,6 +105,44 @@ namespace DVLD_Buisness
             return (this.PersonID != -1);
         }
 
+
+
+        private bool _UpdatePerson()
+        {
+            return clsPersonDataAccess.UpdatePerson(
+                this.PersonID, this.NationalNo, this.FirstName, this.SecondName, this.ThirdName, this.LastName,
+                this.DateOfBirth, this.Gender, this.Address, this.Phone, this.Email, this.NationalityCountryID, this.ImagePath
+            );
+        }
+
+
+        public static clsPersonBuisnessLayer FindByPersonID(int PersonID)
+        {
+            string NationalNo = "";
+            string FirstName = ""; 
+            string SecondName = "";
+            string ThirdName = ""; 
+            string LastName = "";  
+            DateTime DateOfBirth = DateTime.Now; 
+            byte Gender = 0;              
+            string Address = "";          
+            string Phone = "";            
+            string Email = "";            
+            int NationalityCountryID = 0; 
+            string ImagePath = "";
+
+            if (clsPersonDataAccess.Find(PersonID, ref NationalNo, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth, ref Gender, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
+            {
+                return new clsPersonBuisnessLayer(PersonID, NationalNo , FirstName , SecondName , ThirdName , LastName , DateOfBirth , Gender , Address , Phone , Email , NationalityCountryID , ImagePath);
+            }
+            else
+            {
+                return null;
+            }
+;
+
+
+        }
 
 
 
@@ -112,9 +171,9 @@ namespace DVLD_Buisness
                         return false;
                     }
 
-                //case enMode.Update:
+                case enMode.Update:
 
-                //    return _UpdateClientByID();
+                    return _UpdatePerson();
 
                 default:
                     return false;
