@@ -154,7 +154,7 @@ namespace ProjectDVLD.People
            _Person.Phone =   txtPhone.Text;
             _Person.Email =   txtEmail.Text;
             // Person.NationalityCountryID = Convert.ToInt32(cbCountry.Text);
-            _Person.NationalityCountryID = 0;
+            _Person.NationalityCountryID = 1;
             //Person.ImagePath = pbPersonImage.Text;
 
             if (_Person.Save())

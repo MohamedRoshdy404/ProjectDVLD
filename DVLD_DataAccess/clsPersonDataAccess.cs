@@ -55,28 +55,29 @@ namespace DVLD_DataAccess
         public static int AddNewPerson(string NationalNo , string FirstName , string SecondName , string ThirdName  , string LastName , DateTime DateOfBirth , byte Gender , string Address , string Phone , string Email , int NationalityCountryID , string ImagePath)
         {
 
-            int PersonID = 0;
+            int PersonID = -1;
 
             using (SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString))
             {
                 string query = @"   
                         INSERT INTO People (NationalNo , FirstName , SecondName , ThirdName , LastName , DateOfBirth , Gender , Address , Phone , Email , NationalityCountryID , ImagePath)
-			                        VALUES (@NationalNo , @FirstName , @SecondName , @ThirdName , @LastName , @DateOfBirth ,@Gender ,@Address , @Phone , @Email , @NationalityCountryID , @ImagePath   ) 
+			                        VALUES (@NationalNo , @FirstName , @SecondName , @ThirdName , @LastName , @DateOfBirth ,@Gender ,@Address , @Phone , @Email , @NationalityCountryID , @ImagePath   ) ;
                                     SELECT SCOPE_IDENTITY();
                                     ";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
 
-                    command.Parameters.AddWithValue("@NationalNo", NationalNo);
-                    command.Parameters.AddWithValue("@FirstName", FirstName);
-                    command.Parameters.AddWithValue("@SecondName", SecondName);
-                    command.Parameters.AddWithValue("@ThirdName", ThirdName);
-                    command.Parameters.AddWithValue("@LastName", LastName);
-                    command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
+
+                    command.Parameters.AddWithValue("@NationalNo", string.IsNullOrEmpty(NationalNo) ? (object)DBNull.Value : NationalNo);
+                    command.Parameters.AddWithValue("@FirstName", string.IsNullOrEmpty(FirstName) ? (object)DBNull.Value : FirstName);
+                    command.Parameters.AddWithValue("@SecondName", string.IsNullOrEmpty(SecondName) ? (object)DBNull.Value : SecondName);
+                    command.Parameters.AddWithValue("@ThirdName", string.IsNullOrEmpty(ThirdName) ? (object)DBNull.Value : ThirdName);
+                    command.Parameters.AddWithValue("@LastName", string.IsNullOrEmpty(LastName) ? (object)DBNull.Value : LastName);
+                    command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth == null ? (object)DBNull.Value : DateOfBirth);
                     command.Parameters.AddWithValue("@Gender", Gender);
-                    command.Parameters.AddWithValue("@Address", Address);
-                    command.Parameters.AddWithValue("@Phone", Phone);
+                    command.Parameters.AddWithValue("@Address", string.IsNullOrEmpty(Address) ? (object)DBNull.Value : Address);
+                    command.Parameters.AddWithValue("@Phone", string.IsNullOrEmpty(Phone) ? (object)DBNull.Value : Phone);
 
                     if (Email != null)
                         command.Parameters.AddWithValue("@Email", Email);
