@@ -206,21 +206,20 @@ namespace DVLD_DataAccess
             {
                 string query = @"
                                     SELECT 
-                                    NationalNo,
-                                    FirstName,
-                                    SecondName,
-                                    ThirdName,
-                                    LastName,
-                                    DateOfBirth,
-                                    Gender,
-                                    Address,
-                                    Phone,
-                                    Email,
-                                    NationalityCountryID,
-                                    ImagePath
-                                    FROM People
-                                    WHERE PersonID = @PersonID;
-                                    ";
+                                        NationalNo,
+                                        FirstName,
+                                        SecondName,
+                                        ThirdName,
+                                        LastName,
+                                        DateOfBirth,
+                                        Gender,
+                                        Address,
+                                        Phone,
+                                        Email,
+                                        NationalityCountryID,
+                                        ImagePath
+                                        FROM People
+                                        WHERE PersonID = @PersonID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -238,18 +237,100 @@ namespace DVLD_DataAccess
                             {
                                 isFound = true;
                                 // قراءة البيانات من قاعدة البيانات
-                                string nationalNo = reader["NationalNo"].ToString();
-                                string firstName = reader["FirstName"].ToString();
-                                string secondName = reader["SecondName"].ToString();
-                                string thirdName = reader["ThirdName"].ToString();
-                                string lastName = reader["LastName"].ToString();
-                                DateTime dateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
-                                byte gender = Convert.ToByte(reader["Gender"]);
-                                string address = reader["Address"].ToString();
-                                string phone = reader["Phone"].ToString();
-                                string email = reader["Email"].ToString();
-                                int nationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
-                                string imagePath = reader["ImagePath"].ToString();
+                                NationalNo = reader["NationalNo"].ToString();
+                                FirstName = reader["FirstName"].ToString();
+                                SecondName = reader["SecondName"].ToString();
+                                ThirdName = reader["ThirdName"].ToString();
+                                LastName = reader["LastName"].ToString();
+                                DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
+                                Gender = Convert.ToByte(reader["Gender"]);
+                                Address = reader["Address"].ToString();
+                                Phone = reader["Phone"].ToString();
+                                Email = reader["Email"].ToString();
+                                NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
+                                ImagePath = reader["ImagePath"].ToString();
+
+                            }
+                            else
+                            {
+                                // إذا لم يتم العثور على البيانات
+                                Console.WriteLine("No data found for the given PersonID.");
+                            }
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                }
+
+
+            }
+
+            return isFound;
+
+        }
+
+
+
+
+
+
+        
+        public static bool Find(string NationalNo, ref int PersonID , ref string FirstName, ref string SecondName, ref string ThirdName, ref string LastName, ref DateTime DateOfBirth, ref byte Gender, ref string Address, ref string Phone, ref string Email, ref int NationalityCountryID, ref string ImagePath)
+        {
+
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString))
+            {
+                string query = @"
+                                    SELECT 
+                                        PersonID,
+                                        FirstName,
+                                        SecondName,
+                                        ThirdName,
+                                        LastName,
+                                        DateOfBirth,
+                                        Gender,
+                                        Address,
+                                        Phone,
+                                        Email,
+                                        NationalityCountryID,
+                                        ImagePath
+                                        FROM People
+                                        WHERE NationalNo = @NationalNo";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+                    try
+                    {
+
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+                                // قراءة البيانات من قاعدة البيانات
+                                PersonID = Convert.ToInt32( reader["PersonID"]);
+                                FirstName = reader["FirstName"].ToString();
+                                SecondName = reader["SecondName"].ToString();
+                                ThirdName = reader["ThirdName"].ToString();
+                                LastName = reader["LastName"].ToString();
+                                DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
+                                Gender = Convert.ToByte(reader["Gender"]);
+                                Address = reader["Address"].ToString();
+                                Phone = reader["Phone"].ToString();
+                                Email = reader["Email"].ToString();
+                                NationalityCountryID = Convert.ToInt32(reader["NationalityCountryID"]);
+                                ImagePath = reader["ImagePath"].ToString();
 
                             }
                             else

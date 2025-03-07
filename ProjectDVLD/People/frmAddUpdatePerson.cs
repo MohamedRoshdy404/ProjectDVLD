@@ -80,7 +80,7 @@ namespace ProjectDVLD.People
 
         private void _LoadData()
         {
-            _Person = clsPersonBuisnessLayer.FindByPersonID(_PersonID);
+            _Person = clsPersonBuisnessLayer.FindByPersonID( _PersonID);
 
 
             if (_Person == null)

@@ -28,5 +28,16 @@ namespace ProjectDVLD.UserControls
             Form frmAddUpdatePerson = new frmAddUpdatePerson();
             frmAddUpdatePerson.ShowDialog();
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmShowPersonInfo = new frmShowPersonInfo( (int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
+            frmShowPersonInfo.ShowDialog();
+        }
+
+        private void ctrlfrmListPeople_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

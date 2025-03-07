@@ -61,6 +61,7 @@
             this.ClientSize = new System.Drawing.Size(1232, 726);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.ctrlPersonCardWithFilter1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListPeople";
             this.Text = "frmListPeople";

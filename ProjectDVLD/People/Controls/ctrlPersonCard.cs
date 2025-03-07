@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD_Buisness;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,64 @@ namespace ProjectDVLD.People.Controls
 {
     public partial class ctrlPersonCard : UserControl
     {
+        private clsPersonBuisnessLayer _Person;
+
+        private int _PersonID = -1;
         public ctrlPersonCard()
         {
             InitializeComponent();
+            
         }
+
+        private void _FillPersonInfo()
+        {
+            llEditPersonInfo.Enabled = true;
+            _PersonID = _Person.PersonID;
+            lblPersonID.Text = _Person.PersonID.ToString();
+            lblNationalNo.Text = _Person.NationalNo;
+            lblFullName.Text = _Person.FirstName ;
+            lblGendor.Text = _Person.Gender == 0 ? "Male" : "Female";
+            lblEmail.Text = _Person.Email;
+            lblPhone.Text = _Person.Phone;
+            lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
+            //lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
+            lblAddress.Text = _Person.Address;
+            //_LoadPersonImage();
+
+
+
+
+        }
+
+
+        public void LoadPersonInfo(int PersonID)
+        {
+            _Person = clsPersonBuisnessLayer.FindByPersonID( PersonID);
+            MessageBox.Show($"{PersonID}");
+
+            if (_Person == null)
+            {
+                //ResetPersonInfo();
+                MessageBox.Show("No Person with PersonID = " + PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _FillPersonInfo();
+        }
+
+        public void LoadPersonInfo(string NationalNo)
+        {
+            _Person = clsPersonBuisnessLayer.FindByNationalNo(NationalNo);
+            if (_Person == null)
+            {
+                //ResetPersonInfo();
+                MessageBox.Show("No Person with National No. = " + NationalNo.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            _FillPersonInfo();
+        }
+
+
     }
 }

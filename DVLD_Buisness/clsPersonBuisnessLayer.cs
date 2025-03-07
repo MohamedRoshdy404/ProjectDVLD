@@ -94,17 +94,11 @@ namespace DVLD_Buisness
 
 
 
-
-
-
-
-
         private bool _AddNewPerson()
         {
             this.PersonID = clsPersonDataAccess.AddNewPerson(this.NationalNo,this.FirstName , this.SecondName , this.ThirdName , this.LastName , this.DateOfBirth , this.Gender , this.Address , this.Phone , this.Email , this.NationalityCountryID , this.ImagePath );
             return (this.PersonID != -1);
         }
-
 
 
         private bool _UpdatePerson()
@@ -116,7 +110,7 @@ namespace DVLD_Buisness
         }
 
 
-        public static clsPersonBuisnessLayer FindByPersonID(int PersonID)
+        public static clsPersonBuisnessLayer FindByPersonID( int PersonID)
         {
             string NationalNo = "";
             string FirstName = ""; 
@@ -146,13 +140,47 @@ namespace DVLD_Buisness
 
 
 
-        public static DataTable GetAllPeople()
+
+        public static clsPersonBuisnessLayer FindByNationalNo(string NationalNo)
         {
-            return clsPersonDataAccess.GetAllPeople();
+            int PersonID = -1;
+            string FirstName = "";
+            string SecondName = "";
+            string ThirdName = "";
+            string LastName = "";
+            DateTime DateOfBirth = DateTime.Now;
+            byte Gender = 0;
+            string Address = "";
+            string Phone = "";
+            string Email = "";
+            int NationalityCountryID = 0;
+            string ImagePath = "";
+
+            if (clsPersonDataAccess.Find(NationalNo, ref PersonID , ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth, ref Gender, ref Address, ref Phone, ref Email, ref NationalityCountryID, ref ImagePath))
+            {
+                return new clsPersonBuisnessLayer(PersonID, NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gender, Address, Phone, Email, NationalityCountryID, ImagePath);
+            }
+            else
+            {
+                return null;
+            }
+;
+
+
         }
 
 
 
+
+
+
+
+
+
+        public static DataTable GetAllPeople()
+        {
+            return clsPersonDataAccess.GetAllPeople();
+        }
 
 
         public bool Save()

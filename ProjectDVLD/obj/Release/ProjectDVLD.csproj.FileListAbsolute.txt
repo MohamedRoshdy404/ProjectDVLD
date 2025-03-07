@@ -17,3 +17,4 @@ C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\bin\Release\DVLD_DataA
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.People.Controls.ctrlPersonCard.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.People.frmAddUpdatePerson.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.UserControls.ctrlfrmListPeople.resources
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.People.frmShowPersonInfo.resources
