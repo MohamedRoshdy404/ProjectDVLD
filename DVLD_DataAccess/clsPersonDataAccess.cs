@@ -13,7 +13,6 @@ namespace DVLD_DataAccess
     public class clsPersonDataAccess
     {
 
-
         public static DataTable GetAllPeople()
         {
             DataTable dataTable = new DataTable();
@@ -21,7 +20,16 @@ namespace DVLD_DataAccess
             using (SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString))
             {
 
-                string query = @"SELECT * FROM People ";
+
+                string query = @"SELECT        People.PersonID, People.NationalNo, People.FirstName, People.SecondName,         People.ThirdName, People.LastName, 
+
+                        case 
+                        when Gender = 0 then 'Male'
+                        else 'Female'
+                        end as Gender,
+                        People.DateOfBirth, Countries.CountryName, People.Phone, People.Email
+                        FROM            Countries INNER JOIN
+                         People ON Countries.CountryID = People.NationalityCountryID ";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
