@@ -18,6 +18,7 @@ namespace ProjectDVLD.People
 
 
         public enum enMode { AddNew = 0, Update = 1 };
+        public enum enGende { Male = 0, Female = 1 };
         public enMode Mode;
         private int _PersonID = -1;
         clsPersonBuisnessLayer _Person;
@@ -132,6 +133,14 @@ namespace ProjectDVLD.People
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+            if (!this.ValidateChildren())
+            {
+                //Here we dont continue becuase the form is not valid
+                MessageBox.Show("Some fileds are not valide!, put the mouse over the red icon(s) to see the error", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
             _Person.NationalNo = txtNationalNo.Text;
             _Person.FirstName = txtFirstName.Text;
             _Person.SecondName = txtSecondName.Text;
@@ -140,16 +149,20 @@ namespace ProjectDVLD.People
             _Person.DateOfBirth = dtpDateOfBirth.Value;
 
             if (rbMale.Checked)
-                _Person.Gender = 0;
+                _Person.Gender = (short) enGende.Male;
             else
-                _Person.Gender = 1;
+                _Person.Gender = (short) enGende.Female;
 
            _Person.Address = txtAddress.Text;
            _Person.Phone =   txtPhone.Text;
             _Person.Email =   txtEmail.Text;
             // Person.NationalityCountryID = Convert.ToInt32(cbCountry.Text);
             _Person.NationalityCountryID = 1;
-            //Person.ImagePath = pbPersonImage.Text;
+
+            if (pbPersonImage.ImageLocation != null)
+                _Person.ImagePath = pbPersonImage.ImageLocation;
+            else
+                _Person.ImagePath = ""; ;
 
             if (_Person.Save())
             {

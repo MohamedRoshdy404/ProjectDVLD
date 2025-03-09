@@ -40,7 +40,7 @@ namespace ProjectDVLD.People.Controls
             _PersonID = _Person.PersonID;
             lblPersonID.Text = _Person.PersonID.ToString();
             lblNationalNo.Text = _Person.NationalNo;
-            lblFullName.Text = _Person.FirstName ;
+            lblFullName.Text = _Person.FullName ;
             lblGendor.Text = _Person.Gender == 0 ? "Male" : "Female";
             lblEmail.Text = _Person.Email;
             lblPhone.Text = _Person.Phone;

@@ -60,7 +60,7 @@ namespace DVLD_DataAccess
 
 
 
-        public static int AddNewPerson(string NationalNo , string FirstName , string SecondName , string ThirdName  , string LastName , DateTime DateOfBirth , byte Gender , string Address , string Phone , string Email , int NationalityCountryID , string ImagePath)
+        public static int AddNewPerson(string NationalNo , string FirstName , string SecondName , string ThirdName  , string LastName , DateTime DateOfBirth , short Gender , string Address , string Phone , string Email , int NationalityCountryID , string ImagePath)
         {
 
             int PersonID = -1;
@@ -127,7 +127,7 @@ namespace DVLD_DataAccess
 
 
 
-        public static bool UpdatePerson(int PersonID,  string NationalNo,  string FirstName,  string SecondName,  string ThirdName,  string LastName,  DateTime DateOfBirth,  byte Gender,  string Address,  string Phone,  string Email,  int NationalityCountryID,  string ImagePath)
+        public static bool UpdatePerson(int PersonID,  string NationalNo,  string FirstName,  string SecondName,  string ThirdName,  string LastName,  DateTime DateOfBirth,  short Gender,  string Address,  string Phone,  string Email,  int NationalityCountryID,  string ImagePath)
         {
 
             int rowsAffected = 0;
