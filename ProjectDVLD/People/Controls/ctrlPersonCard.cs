@@ -48,7 +48,10 @@ namespace ProjectDVLD.People.Controls
             //lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
             lblAddress.Text = _Person.Address;
             //_LoadPersonImage();
-
+            if (_Person.ImagePath != "")
+            {
+                pbPersonImage.ImageLocation = _Person.ImagePath;
+            }
 
 
 
@@ -82,6 +85,10 @@ namespace ProjectDVLD.People.Controls
             _FillPersonInfo();
         }
 
-
+        private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form frmUpdatePerson = new frmAddUpdatePerson(_PersonID);
+            frmUpdatePerson.ShowDialog();
+        }
     }
 }

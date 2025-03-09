@@ -65,7 +65,7 @@
             this.applicToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.applicToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.applicToolStripMenuItem.Name = "applicToolStripMenuItem";
-            this.applicToolStripMenuItem.Size = new System.Drawing.Size(229, 66);
+            this.applicToolStripMenuItem.Size = new System.Drawing.Size(229, 86);
             this.applicToolStripMenuItem.Text = "applications";
             // 
             // ssToolStripMenuItem
@@ -79,7 +79,7 @@
             this.peopalToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("peopalToolStripMenuItem.Image")));
             this.peopalToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.peopalToolStripMenuItem.Name = "peopalToolStripMenuItem";
-            this.peopalToolStripMenuItem.Size = new System.Drawing.Size(139, 66);
+            this.peopalToolStripMenuItem.Size = new System.Drawing.Size(139, 86);
             this.peopalToolStripMenuItem.Text = "People";
             this.peopalToolStripMenuItem.Click += new System.EventHandler(this.peopalToolStripMenuItem_Click);
             // 
@@ -88,7 +88,7 @@
             this.driversToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("driversToolStripMenuItem.Image")));
             this.driversToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
-            this.driversToolStripMenuItem.Size = new System.Drawing.Size(140, 66);
+            this.driversToolStripMenuItem.Size = new System.Drawing.Size(140, 86);
             this.driversToolStripMenuItem.Text = "Drivers";
             // 
             // usersToolStripMenuItem
@@ -96,7 +96,7 @@
             this.usersToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("usersToolStripMenuItem.Image")));
             this.usersToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(127, 66);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(127, 86);
             this.usersToolStripMenuItem.Text = "Users";
             // 
             // accountSettingsToolStripMenuItem
@@ -104,7 +104,7 @@
             this.accountSettingsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("accountSettingsToolStripMenuItem.Image")));
             this.accountSettingsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.accountSettingsToolStripMenuItem.Name = "accountSettingsToolStripMenuItem";
-            this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(215, 66);
+            this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(215, 86);
             this.accountSettingsToolStripMenuItem.Text = "Account Settings";
             // 
             // Main
@@ -112,13 +112,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1621, 772);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
