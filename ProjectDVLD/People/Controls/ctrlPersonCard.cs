@@ -16,6 +16,18 @@ namespace ProjectDVLD.People.Controls
         private clsPersonBuisnessLayer _Person;
 
         private int _PersonID = -1;
+        public int PersonID
+        {
+             get { return _PersonID; }
+        }
+
+        public clsPersonBuisnessLayer SelectedPersonInfo
+        {
+            get { return _Person; }
+        }
+
+
+
         public ctrlPersonCard()
         {
             InitializeComponent();
@@ -46,7 +58,6 @@ namespace ProjectDVLD.People.Controls
         public void LoadPersonInfo(int PersonID)
         {
             _Person = clsPersonBuisnessLayer.FindByPersonID( PersonID);
-            MessageBox.Show($"{PersonID}");
 
             if (_Person == null)
             {

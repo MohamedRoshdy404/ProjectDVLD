@@ -39,5 +39,17 @@ namespace ProjectDVLD.UserControls
         {
 
         }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmUpdatePerson = new frmAddUpdatePerson((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
+            frmUpdatePerson.ShowDialog();
+        }
+
+        private void AddNewPersontoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmAddPerson = new frmAddUpdatePerson();
+            frmAddPerson.ShowDialog();
+        }
     }
 }

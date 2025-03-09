@@ -18,7 +18,7 @@ namespace ProjectDVLD.People
 
 
         public enum enMode { AddNew = 0, Update = 1 };
-        public enMode Mode = enMode.AddNew;
+        public enMode Mode;
         private int _PersonID = -1;
         clsPersonBuisnessLayer _Person;
         
@@ -48,8 +48,8 @@ namespace ProjectDVLD.People
 
             if (Mode == enMode.AddNew)
             {
-                _Person = new clsPersonBuisnessLayer();
                 lblTitle.Text = "Add New Person";
+                _Person = new clsPersonBuisnessLayer();
             }
             else
             {
@@ -63,16 +63,18 @@ namespace ProjectDVLD.People
 
             llRemoveImage.Visible = (pbPersonImage.ImageLocation != null);
 
-            _Person.NationalNo = "";
-            _Person.FirstName = "";
-            _Person.SecondName = "";
-            _Person.ThirdName = "";
-            _Person.LastName = "";
-            //_Person.DateOfBirth = "";
+
+            txtFirstName.Text = "";
+            txtSecondName.Text = "";
+            txtThirdName.Text = "";
+            txtLastName.Text = "";
+            txtNationalNo.Text = "";
             rbMale.Checked = true;
-            _Person.Address = "";
-            _Person.Phone = "";
-            _Person.Email = "";
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            txtAddress.Text = "";
+
+
 
 
         }
@@ -191,6 +193,8 @@ namespace ProjectDVLD.People
 
 
 
+
+
         }
 
         private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -219,6 +223,11 @@ namespace ProjectDVLD.People
                 pbPersonImage.Image = Resources.Female_512;
 
             llRemoveImage.Visible = false;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
