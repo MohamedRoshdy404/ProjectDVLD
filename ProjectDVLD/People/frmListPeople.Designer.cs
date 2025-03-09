@@ -39,7 +39,7 @@
             this.BtnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
             this.BtnClose.Image = ((System.Drawing.Image)(resources.GetObject("BtnClose.Image")));
             this.BtnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnClose.Location = new System.Drawing.Point(1069, 638);
+            this.BtnClose.Location = new System.Drawing.Point(1070, 639);
             this.BtnClose.Name = "BtnClose";
             this.BtnClose.Size = new System.Drawing.Size(128, 35);
             this.BtnClose.TabIndex = 9;
@@ -61,6 +61,7 @@
             this.ClientSize = new System.Drawing.Size(1232, 726);
             this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.ctrlPersonCardWithFilter1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListPeople";

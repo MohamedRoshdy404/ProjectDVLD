@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlfrmListPeople));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.picBoxManagePeople = new System.Windows.Forms.PictureBox();
             this.labManagePeople = new System.Windows.Forms.Label();
             this.labFilterBy = new System.Windows.Forms.Label();
@@ -56,7 +58,7 @@
             // picBoxManagePeople
             // 
             this.picBoxManagePeople.Image = ((System.Drawing.Image)(resources.GetObject("picBoxManagePeople.Image")));
-            this.picBoxManagePeople.Location = new System.Drawing.Point(475, 27);
+            this.picBoxManagePeople.Location = new System.Drawing.Point(475, 28);
             this.picBoxManagePeople.Name = "picBoxManagePeople";
             this.picBoxManagePeople.Size = new System.Drawing.Size(228, 161);
             this.picBoxManagePeople.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -125,9 +127,25 @@
             this.DGVGetAllPeople.AllowUserToDeleteRows = false;
             this.DGVGetAllPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVGetAllPeople.ContextMenuStrip = this.cmsPeople;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVGetAllPeople.DefaultCellStyle = dataGridViewCellStyle1;
             this.DGVGetAllPeople.Location = new System.Drawing.Point(28, 293);
             this.DGVGetAllPeople.Name = "DGVGetAllPeople";
             this.DGVGetAllPeople.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGVGetAllPeople.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DGVGetAllPeople.Size = new System.Drawing.Size(1180, 333);
             this.DGVGetAllPeople.TabIndex = 5;
             // 
@@ -143,28 +161,28 @@
             this.sendEmailToolStripMenuItem,
             this.phoneCallToolStripMenuItem});
             this.cmsPeople.Name = "contextMenuStrip1";
-            this.cmsPeople.Size = new System.Drawing.Size(205, 314);
+            this.cmsPeople.Size = new System.Drawing.Size(187, 292);
             // 
             // showDetailsToolStripMenuItem
             // 
             this.showDetailsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("showDetailsToolStripMenuItem.Image")));
             this.showDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
             this.showDetailsToolStripMenuItem.Text = "&Show Details";
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(183, 6);
             // 
             // AddNewPersontoolStripMenuItem
             // 
             this.AddNewPersontoolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("AddNewPersontoolStripMenuItem.Image")));
             this.AddNewPersontoolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.AddNewPersontoolStripMenuItem.Name = "AddNewPersontoolStripMenuItem";
-            this.AddNewPersontoolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.AddNewPersontoolStripMenuItem.Size = new System.Drawing.Size(186, 46);
             this.AddNewPersontoolStripMenuItem.Text = "Add &New Person";
             this.AddNewPersontoolStripMenuItem.Click += new System.EventHandler(this.AddNewPersontoolStripMenuItem_Click);
             // 
@@ -173,7 +191,7 @@
             this.editToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripMenuItem.Image")));
             this.editToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
             this.editToolStripMenuItem.Text = "&Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -182,20 +200,20 @@
             this.deleteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem.Image")));
             this.deleteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
             this.deleteToolStripMenuItem.Text = "&Delete";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(183, 6);
             // 
             // sendEmailToolStripMenuItem
             // 
             this.sendEmailToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sendEmailToolStripMenuItem.Image")));
             this.sendEmailToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
-            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
             this.sendEmailToolStripMenuItem.Text = "Send E&mail";
             // 
             // phoneCallToolStripMenuItem
@@ -203,7 +221,7 @@
             this.phoneCallToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("phoneCallToolStripMenuItem.Image")));
             this.phoneCallToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
-            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
             this.phoneCallToolStripMenuItem.Text = "Phone &Call";
             // 
             // labRecords
@@ -238,6 +256,7 @@
             this.Controls.Add(this.labFilterBy);
             this.Controls.Add(this.labManagePeople);
             this.Controls.Add(this.picBoxManagePeople);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "ctrlfrmListPeople";
             this.Size = new System.Drawing.Size(1228, 686);
             this.Load += new System.EventHandler(this.ctrlfrmListPeople_Load);
