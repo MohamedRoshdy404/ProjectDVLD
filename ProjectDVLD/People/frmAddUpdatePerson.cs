@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Resources;
 using System.Windows.Forms;
 using ProjectDVLD.Properties;
+using ProjectDVLD.Globel_Classes;
+using ProjectDVLD.Global_Classes;
+using System.IO;
 
 namespace ProjectDVLD.People
 {
@@ -130,6 +133,54 @@ namespace ProjectDVLD.People
             cbCountry.SelectedIndex = cbCountry.FindString("Egypt");
         }
 
+        private bool _HandlePersonImage()
+        {
+
+            //this procedure will handle the person image,
+            //it will take care of deleting the old image from the folder
+            //in case the image changed. and it will rename the new image with guid and 
+            // place it in the images folder.
+
+
+            //_Person.ImagePath contains the old Image, we check if it changed then we copy the new image
+            if (_Person.ImagePath != pbPersonImage.ImageLocation)
+            {
+                if (_Person.ImagePath != "")
+                {
+                    //first we delete the old image from the folder in case there is any.
+
+                    try
+                    {
+                        File.Delete(_Person.ImagePath);
+                    }
+                    catch (IOException)
+                    {
+                        // We could not delete the file.
+                        //log it later   
+                    }
+                }
+
+                if (pbPersonImage.ImageLocation != null)
+                {
+                    //then we copy the new image to the image folder after we rename it
+                    string SourceImageFile = pbPersonImage.ImageLocation.ToString();
+
+                    if (clsUtil.CopyImageToProjectImagesFolder(ref SourceImageFile))
+                    {
+                        pbPersonImage.ImageLocation = SourceImageFile;
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                }
+
+            }
+            return true;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
 
@@ -140,6 +191,9 @@ namespace ProjectDVLD.People
                 return;
 
             }
+
+            if (!_HandlePersonImage())
+                return;
 
             _Person.NationalNo = txtNationalNo.Text;
             _Person.FirstName = txtFirstName.Text;
@@ -207,6 +261,29 @@ namespace ProjectDVLD.People
 
 
 
+
+        }
+
+        private void txtEmail_Validating(object sender , CancelEventArgs e)
+        {
+
+        }
+
+        private void ValidateEmptyTextBox(object sender, CancelEventArgs e)
+        {
+
+            // First: set AutoValidate property of your Form to EnableAllowFocusChange in designer 
+            TextBox Temp = ((TextBox)sender);
+            if (string.IsNullOrEmpty(Temp.Text.Trim()))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(Temp, "This field is required!");
+            }
+            else
+            {
+                //e.Cancel = false;
+                errorProvider1.SetError(Temp, null);
+            }
 
         }
 

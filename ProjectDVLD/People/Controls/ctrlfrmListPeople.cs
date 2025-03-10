@@ -51,5 +51,11 @@ namespace ProjectDVLD.UserControls
             Form frmAddPerson = new frmAddUpdatePerson();
             frmAddPerson.ShowDialog();
         }
+
+        private void DGVGetAllPeople_DoubleClick(object sender, EventArgs e)
+        {
+            Form frmUpdatePerson = new frmAddUpdatePerson((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
+            frmUpdatePerson.ShowDialog();
+        }
     }
 }
