@@ -112,6 +112,7 @@
             // 
             // picBoxAddPerson
             // 
+            this.picBoxAddPerson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picBoxAddPerson.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxAddPerson.Image = ((System.Drawing.Image)(resources.GetObject("picBoxAddPerson.Image")));
             this.picBoxAddPerson.Location = new System.Drawing.Point(1140, 226);
