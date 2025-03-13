@@ -1,4 +1,5 @@
 ﻿using DVLD_Buisness;
+using ProjectDVLD.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,25 @@ namespace ProjectDVLD.People.Controls
             
         }
 
+
+        public void ResetPersonInfo()
+        {
+            _PersonID = -1;
+            lblPersonID.Text = "[????]";
+            lblNationalNo.Text = "[????]";
+            lblFullName.Text = "[????]";
+            pbGendor.Image = Resources.Man_32;
+            lblGendor.Text = "[????]";
+            lblEmail.Text = "[????]";
+            lblPhone.Text = "[????]";
+            lblDateOfBirth.Text = "[????]";
+            lblCountry.Text = "[????]";
+            lblAddress.Text = "[????]";
+            pbPersonImage.Image = Resources.Male_512;
+
+        }
+
+
         private void _FillPersonInfo()
         {
             llEditPersonInfo.Enabled = true;
@@ -64,7 +84,7 @@ namespace ProjectDVLD.People.Controls
 
             if (_Person == null)
             {
-                //ResetPersonInfo();
+                ResetPersonInfo();
                 MessageBox.Show("No Person with PersonID = " + PersonID.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -77,7 +97,7 @@ namespace ProjectDVLD.People.Controls
             _Person = clsPersonBuisnessLayer.FindByNationalNo(NationalNo);
             if (_Person == null)
             {
-                //ResetPersonInfo();
+                ResetPersonInfo();
                 MessageBox.Show("No Person with National No. = " + NationalNo.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }

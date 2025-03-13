@@ -19,10 +19,15 @@ namespace ProjectDVLD.UserControls
             InitializeComponent();
             cbFilterBy.SelectedIndex = 0;
 
-            DGVGetAllPeople.DataSource = clsPersonBuisnessLayer.GetAllPeople();
+           
 
         }
 
+        private void _RefreshPeoplList()
+        {
+            DGVGetAllPeople.DataSource = clsPersonBuisnessLayer.GetAllPeople();
+            labRecordsCount.Text = DGVGetAllPeople.Rows.Count.ToString();
+        }
         private void picBoxAddPerson_Click(object sender, EventArgs e)
         {
             Form frmAddUpdatePerson = new frmAddUpdatePerson();
@@ -37,13 +42,14 @@ namespace ProjectDVLD.UserControls
 
         private void ctrlfrmListPeople_Load(object sender, EventArgs e)
         {
-
+            _RefreshPeoplList();
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frmUpdatePerson = new frmAddUpdatePerson((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
             frmUpdatePerson.ShowDialog();
+            _RefreshPeoplList();
         }
 
         private void AddNewPersontoolStripMenuItem_Click(object sender, EventArgs e)

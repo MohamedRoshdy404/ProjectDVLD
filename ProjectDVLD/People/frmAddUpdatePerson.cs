@@ -112,6 +112,7 @@ namespace ProjectDVLD.People
             txtAddress.Text = _Person.Address;
             txtPhone.Text = _Person.Phone;
             txtEmail.Text = _Person.Email;
+            cbCountry.SelectedIndex = cbCountry.FindString(_Person.CountryInfo.CountryName);
 
             if (_Person.ImagePath != "")
             {
@@ -194,7 +195,7 @@ namespace ProjectDVLD.People
 
             if (!_HandlePersonImage())
                 return;
-
+            int NationalityCountryID = clsCountriesBuisnessLayer.Find(cbCountry.Text).ID;
             _Person.NationalNo = txtNationalNo.Text;
             _Person.FirstName = txtFirstName.Text;
             _Person.SecondName = txtSecondName.Text;
@@ -209,9 +210,8 @@ namespace ProjectDVLD.People
 
            _Person.Address = txtAddress.Text;
            _Person.Phone =   txtPhone.Text;
-            _Person.Email =   txtEmail.Text;
-            // Person.NationalityCountryID = Convert.ToInt32(cbCountry.Text);
-            _Person.NationalityCountryID = 1;
+           _Person.Email =   txtEmail.Text;
+           _Person.NationalityCountryID = NationalityCountryID;
 
             if (pbPersonImage.ImageLocation != null)
                 _Person.ImagePath = pbPersonImage.ImageLocation;

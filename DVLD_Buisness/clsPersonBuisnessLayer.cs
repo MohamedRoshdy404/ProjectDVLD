@@ -21,13 +21,21 @@ namespace DVLD_Buisness
         public string SecondName { get; set; }
         public string ThirdName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get; set; }
+        //public string FullName { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + SecondName + " " + ThirdName + " " + LastName;
+            }
+        }
         public DateTime DateOfBirth { get; set; }
         public short Gender { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         public int NationalityCountryID { get; set; }
+        public clsCountriesBuisnessLayer CountryInfo; 
         public string ImagePath { get; set; }
 
 
@@ -61,7 +69,6 @@ namespace DVLD_Buisness
             this.SecondName = SecondName;
             this.ThirdName = ThirdName;
             this.LastName = LastName;
-            this.FullName = FullName + SecondName + ThirdName + LastName;
             this.DateOfBirth = DateOfBirth;
             this.Gender = Gender;
             this.Address = Address;
@@ -69,7 +76,7 @@ namespace DVLD_Buisness
             this.Email = Email;
             this.NationalityCountryID = NationalityCountryID;
             this.ImagePath = ImagePath;
-
+            this.CountryInfo = clsCountriesBuisnessLayer.Find(NationalityCountryID);
             Mode = enMode.Update;
         }
 
@@ -82,8 +89,7 @@ namespace DVLD_Buisness
             this.FirstName = FirstName;
             this.SecondName = SecondName;
             this.ThirdName = ThirdName;
-            this.LastName = LastName;
-            this.FullName = FirstName + " " + SecondName + " " + ThirdName + " " + LastName;
+            this.LastName = LastName;  
             this.DateOfBirth = DateOfBirth;
             this.Gender = Gender;
             this.Address = Address;
@@ -91,7 +97,7 @@ namespace DVLD_Buisness
             this.Email = Email;
             this.NationalityCountryID = NationalityCountryID;
             this.ImagePath = ImagePath;
-
+            this.CountryInfo = clsCountriesBuisnessLayer.Find(NationalityCountryID);
             Mode = enMode.Update;
         }
 

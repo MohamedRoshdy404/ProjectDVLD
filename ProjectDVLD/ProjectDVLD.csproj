@@ -139,6 +139,7 @@
   <ItemGroup>
     <Content Include="Cars 48.ico" />
     <Content Include="Driver Main.ico" />
+    <None Include="Icons\Man 32.png" />
     <None Include="Icons\Female 512.png" />
     <None Include="Icons\Male 512.png" />
   </ItemGroup>
