@@ -65,9 +65,8 @@ namespace ProjectDVLD.People.Controls
             lblEmail.Text = _Person.Email;
             lblPhone.Text = _Person.Phone;
             lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
-            //lblCountry.Text = clsCountry.Find(_Person.NationalityCountryID).CountryName;
+            lblCountry.Text = clsCountriesBuisnessLayer.Find(_Person.NationalityCountryID).CountryName;
             lblAddress.Text = _Person.Address;
-            //_LoadPersonImage();
             if (_Person.ImagePath != "")
             {
                 pbPersonImage.ImageLocation = _Person.ImagePath;

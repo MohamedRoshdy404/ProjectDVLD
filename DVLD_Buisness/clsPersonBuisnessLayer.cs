@@ -183,6 +183,10 @@ namespace DVLD_Buisness
 
 
 
+        public static bool DeletePerson(int ID)
+        {
+            return clsPersonDataAccess.DeletePerson(ID);
+        }
 
 
 

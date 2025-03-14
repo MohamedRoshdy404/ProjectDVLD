@@ -7,28 +7,24 @@
       "RelativeMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|solutionrelative:projectdvld\\people\\controls\\ctrlfrmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|c:\\users\\programming\\source\\repos\\projectdvld\\projectdvld\\people\\controls\\ctrlfrmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EC79B98F-1580-45AB-AF8E-0F46C6A20BDA}|DVLD_Buisness\\DVLD_Buisness.csproj|C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\dvld_buisness\\clspersonbuisnesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC79B98F-1580-45AB-AF8E-0F46C6A20BDA}|DVLD_Buisness\\DVLD_Buisness.csproj|solutionrelative:dvld_buisness\\clspersonbuisnesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{02B0A080-DA76-4A5C-B6BD-9C28FBF91936}|DVLD_DataAccess\\DVLD_DataAccess.csproj|C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\dvld_dataaccess\\clspersondataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{02B0A080-DA76-4A5C-B6BD-9C28FBF91936}|DVLD_DataAccess\\DVLD_DataAccess.csproj|solutionrelative:dvld_dataaccess\\clspersondataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\projectdvld\\people\\controls\\ctrlfrmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|solutionrelative:projectdvld\\people\\controls\\ctrlfrmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|c:\\users\\programming\\source\\repos\\projectdvld\\projectdvld\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|solutionrelative:projectdvld\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|c:\\users\\programming\\source\\repos\\projectdvld\\projectdvld\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|solutionrelative:projectdvld\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC79B98F-1580-45AB-AF8E-0F46C6A20BDA}|DVLD_Buisness\\DVLD_Buisness.csproj|c:\\users\\programming\\source\\repos\\projectdvld\\dvld_buisness\\clspersonbuisnesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC79B98F-1580-45AB-AF8E-0F46C6A20BDA}|DVLD_Buisness\\DVLD_Buisness.csproj|solutionrelative:dvld_buisness\\clspersonbuisnesslayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\projectdvld\\people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|solutionrelative:projectdvld\\people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\projectdvld\\people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|solutionrelative:projectdvld\\people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|c:\\users\\programming\\source\\repos\\projectdvld\\projectdvld\\people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{507DACB0-9FE2-45BE-B358-7D481D2FE870}|ProjectDVLD\\ProjectDVLD.csproj|solutionrelative:projectdvld\\people\\controls\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,8 +34,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsPersonDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\DVLD_DataAccess\\clsPersonDataAccess.cs",
+              "RelativeDocumentMoniker": "DVLD_DataAccess\\clsPersonDataAccess.cs",
+              "ToolTip": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\DVLD_DataAccess\\clsPersonDataAccess.cs",
+              "RelativeToolTip": "DVLD_DataAccess\\clsPersonDataAccess.cs",
+              "ViewState": "AgIAACkBAAAAAAAAAAAgwB0BAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T23:31:47.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clsPersonBuisnessLayer.cs",
+              "DocumentMoniker": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\DVLD_Buisness\\clsPersonBuisnessLayer.cs",
+              "RelativeDocumentMoniker": "DVLD_Buisness\\clsPersonBuisnessLayer.cs",
+              "ToolTip": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\DVLD_Buisness\\clsPersonBuisnessLayer.cs",
+              "RelativeToolTip": "DVLD_Buisness\\clsPersonBuisnessLayer.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAAAL0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T23:30:51.044Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -48,73 +68,33 @@
               "RelativeDocumentMoniker": "ProjectDVLD\\People\\Controls\\ctrlfrmListPeople.cs",
               "ToolTip": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\Controls\\ctrlfrmListPeople.cs",
               "RelativeToolTip": "ProjectDVLD\\People\\Controls\\ctrlfrmListPeople.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwE0AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T14:16:17.354Z",
+              "WhenOpened": "2025-03-13T16:01:49.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ctrlfrmListPeople.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\Controls\\ctrlfrmListPeople.cs",
               "RelativeDocumentMoniker": "ProjectDVLD\\People\\Controls\\ctrlfrmListPeople.cs",
               "ToolTip": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\Controls\\ctrlfrmListPeople.cs [Design]",
               "RelativeToolTip": "ProjectDVLD\\People\\Controls\\ctrlfrmListPeople.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T14:16:15.347Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-13T16:01:34.154Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "clsPersonBuisnessLayer.cs",
-              "DocumentMoniker": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\DVLD_Buisness\\clsPersonBuisnessLayer.cs",
-              "RelativeDocumentMoniker": "DVLD_Buisness\\clsPersonBuisnessLayer.cs",
-              "ToolTip": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\DVLD_Buisness\\clsPersonBuisnessLayer.cs",
-              "RelativeToolTip": "DVLD_Buisness\\clsPersonBuisnessLayer.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAEwE4AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T13:56:52.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmAddUpdatePerson.cs",
-              "DocumentMoniker": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\frmAddUpdatePerson.cs",
-              "RelativeDocumentMoniker": "ProjectDVLD\\People\\frmAddUpdatePerson.cs",
-              "ToolTip": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\frmAddUpdatePerson.cs",
-              "RelativeToolTip": "ProjectDVLD\\People\\frmAddUpdatePerson.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA1wNMAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T13:54:24.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmAddUpdatePerson.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\frmAddUpdatePerson.cs",
-              "RelativeDocumentMoniker": "ProjectDVLD\\People\\frmAddUpdatePerson.cs",
-              "ToolTip": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\frmAddUpdatePerson.cs [Design]",
-              "RelativeToolTip": "ProjectDVLD\\People\\frmAddUpdatePerson.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T13:54:23.349Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "ctrlPersonCard.cs",
               "DocumentMoniker": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\Controls\\ctrlPersonCard.cs",
               "RelativeDocumentMoniker": "ProjectDVLD\\People\\Controls\\ctrlPersonCard.cs",
               "ToolTip": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\Controls\\ctrlPersonCard.cs",
               "RelativeToolTip": "ProjectDVLD\\People\\Controls\\ctrlPersonCard.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAiwGgAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwEEAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T22:43:08.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-10T22:43:08.25Z"
             },
             {
               "$type": "Document",
@@ -125,8 +105,7 @@
               "ToolTip": "C:\\Users\\Programming\\source\\repos\\ProjectDVLD\\ProjectDVLD\\People\\Controls\\ctrlPersonCard.cs [Design]",
               "RelativeToolTip": "ProjectDVLD\\People\\Controls\\ctrlPersonCard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-10T22:43:06.256Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-10T22:43:06.256Z"
             }
           ]
         }
