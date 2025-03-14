@@ -38,6 +38,7 @@ namespace ProjectDVLD.UserControls
         {
             Form frmShowPersonInfo = new frmShowPersonInfo( (int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
             frmShowPersonInfo.ShowDialog();
+            _RefreshPeoplList();
         }
 
         private void ctrlfrmListPeople_Load(object sender, EventArgs e)
@@ -56,12 +57,14 @@ namespace ProjectDVLD.UserControls
         {
             Form frmAddPerson = new frmAddUpdatePerson();
             frmAddPerson.ShowDialog();
+            _RefreshPeoplList();
         }
 
         private void DGVGetAllPeople_DoubleClick(object sender, EventArgs e)
         {
             Form frmUpdatePerson = new frmAddUpdatePerson((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
             frmUpdatePerson.ShowDialog();
+            _RefreshPeoplList();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +85,16 @@ namespace ProjectDVLD.UserControls
                     MessageBox.Show("Person was not deleted because it has data linked to it.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not available now. It will be available later" , "Note " , MessageBoxButtons.OK , MessageBoxIcon.Warning);
+        }
+
+        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not available now. It will be available later", "Note ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
