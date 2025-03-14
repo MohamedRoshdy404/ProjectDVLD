@@ -33,8 +33,6 @@ namespace ProjectDVLD.UserControls
 
         private void _RefreshPeoplList()
         {
-            //DGVGetAllPeople.DataSource = clsPersonBuisnessLayer.GetAllPeople();
-            //labRecordsCount.Text = DGVGetAllPeople.Rows.Count.ToString();            
             DGVGetAllPeople.DataSource = _dtPeople;
             labRecordsCount.Text = DGVGetAllPeople.Rows.Count.ToString();
         }
@@ -93,17 +91,10 @@ namespace ProjectDVLD.UserControls
                 DGVGetAllPeople.Columns[10].HeaderText = "Email";
                 DGVGetAllPeople.Columns[10].Width = 170;
 
-
-
-
-
-
-
-
             }
 
 
-            //_RefreshPeoplList();
+         
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -155,6 +146,97 @@ namespace ProjectDVLD.UserControls
         private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This feature is not available now. It will be available later", "Note ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = "";
+
+            switch (cbFilterBy.Text)
+            {
+
+                case "Person ID":
+
+                    FilterColumn = "PersonID";
+                    break;
+
+                case "National No":
+                    FilterColumn = "NationalNo";
+                    break;
+
+                case "First Name":
+                    FilterColumn = "FirstName";
+                    break;
+
+                case "Second Name":
+                    FilterColumn = "SecondName";
+                    break;
+
+                case "Third Name":
+                    FilterColumn = "ThirdName";
+                    break;
+
+                case "Last Name":
+                    FilterColumn = "LastName";
+                    break;
+
+                case "Nationality":
+                    FilterColumn = "CountryName";
+                    break;
+
+                case "Gender":
+                    FilterColumn = "Gender";
+                    break;
+
+                case "Phone":
+                    FilterColumn = "Phone";
+                    break;
+
+                case "Email":
+                    FilterColumn = "Email";
+                    break;
+
+
+                default:
+                    FilterColumn = "None";
+                    break;
+
+            }
+
+
+            if (txtFilter.Text.Trim() == "" || FilterColumn == "None")
+            {
+                _dtPeople.DefaultView.RowFilter = "";
+                labRecordsCount.Text = _dtPeople.Rows.Count.ToString();
+                return;
+            }
+
+
+            if (FilterColumn == "PersonID")
+            
+                _dtPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}" , FilterColumn , txtFilter.Text);
+            else
+                _dtPeople.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn , txtFilter.Text);
+
+            labRecordsCount.Text = DGVGetAllPeople.Rows.Count.ToString();
+
+        }
+
+        private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtFilter.Visible = (cbFilterBy.Text != "None");
+
+            if (txtFilter.Visible)
+            {
+                txtFilter.Text = "";
+                txtFilter.Focus();
+            }
+        }
+
+        private void txtFilter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbFilterBy.Text == "Person ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
