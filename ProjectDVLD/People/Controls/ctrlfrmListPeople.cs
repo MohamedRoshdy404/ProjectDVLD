@@ -14,6 +14,14 @@ namespace ProjectDVLD.UserControls
 {
     public partial class ctrlfrmListPeople : UserControl
     {
+
+
+        private static DataTable _dtAllPeople = clsPersonBuisnessLayer.GetAllPeople();
+
+        private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false , "PersonID", "NationalNo" , "FirstName" , "SecondName" , "ThirdName" , "LastName" , "Gender" , "DateOfBirth" , "CountryName" , "Phone" , "Email");
+
+
+
         public ctrlfrmListPeople()
         {
             InitializeComponent();
@@ -25,7 +33,9 @@ namespace ProjectDVLD.UserControls
 
         private void _RefreshPeoplList()
         {
-            DGVGetAllPeople.DataSource = clsPersonBuisnessLayer.GetAllPeople();
+            //DGVGetAllPeople.DataSource = clsPersonBuisnessLayer.GetAllPeople();
+            //labRecordsCount.Text = DGVGetAllPeople.Rows.Count.ToString();            
+            DGVGetAllPeople.DataSource = _dtPeople;
             labRecordsCount.Text = DGVGetAllPeople.Rows.Count.ToString();
         }
         private void picBoxAddPerson_Click(object sender, EventArgs e)
@@ -43,7 +53,57 @@ namespace ProjectDVLD.UserControls
 
         private void ctrlfrmListPeople_Load(object sender, EventArgs e)
         {
-            _RefreshPeoplList();
+            DGVGetAllPeople.DataSource = _dtPeople;
+            cbFilterBy.SelectedIndex = 0;
+            labRecordsCount.Text = _dtPeople.Rows.Count.ToString();
+
+            if (DGVGetAllPeople.Rows.Count > 0)
+            {
+
+                DGVGetAllPeople.Columns[0].HeaderText = "Person ID";
+                DGVGetAllPeople.Columns[0].Width = 110;
+
+                DGVGetAllPeople.Columns[1].HeaderText = "National No";
+                DGVGetAllPeople.Columns[1].Width = 120;
+
+                DGVGetAllPeople.Columns[2].HeaderText = "First Name";
+                DGVGetAllPeople.Columns[2].Width = 120;
+
+                DGVGetAllPeople.Columns[3].HeaderText = "Second Name";
+                DGVGetAllPeople.Columns[3].Width = 140;
+
+                DGVGetAllPeople.Columns[4].HeaderText = "Third Name";
+                DGVGetAllPeople.Columns[4].Width = 120;
+
+                DGVGetAllPeople.Columns[5].HeaderText = "Last Name";
+                DGVGetAllPeople.Columns[5].Width = 120;
+
+                DGVGetAllPeople.Columns[6].HeaderText = "Gender";
+                DGVGetAllPeople.Columns[6].Width = 120;
+
+                DGVGetAllPeople.Columns[7].HeaderText = "Date Of Birth";
+                DGVGetAllPeople.Columns[7].Width = 140;
+
+                DGVGetAllPeople.Columns[8].HeaderText = "Nationality";
+                DGVGetAllPeople.Columns[8].Width = 120;
+
+                DGVGetAllPeople.Columns[9].HeaderText = "Phone";
+                DGVGetAllPeople.Columns[9].Width = 120;
+
+                DGVGetAllPeople.Columns[10].HeaderText = "Email";
+                DGVGetAllPeople.Columns[10].Width = 170;
+
+
+
+
+
+
+
+
+            }
+
+
+            //_RefreshPeoplList();
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
