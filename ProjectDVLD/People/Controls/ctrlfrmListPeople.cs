@@ -26,13 +26,16 @@ namespace ProjectDVLD.UserControls
         {
             InitializeComponent();
             cbFilterBy.SelectedIndex = 0;
-
-           
-
+            _RefreshPeoplList();
         }
 
         private void _RefreshPeoplList()
         {
+            _dtAllPeople = clsPersonBuisnessLayer.GetAllPeople();
+            _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
+                                                       "FirstName", "SecondName", "ThirdName", "LastName",
+                                                       "Gender", "DateOfBirth", "CountryName",
+                                                       "Phone", "Email");
             DGVGetAllPeople.DataSource = _dtPeople;
             labRecordsCount.Text = DGVGetAllPeople.Rows.Count.ToString();
         }
@@ -40,6 +43,7 @@ namespace ProjectDVLD.UserControls
         {
             Form frmAddUpdatePerson = new frmAddUpdatePerson();
             frmAddUpdatePerson.ShowDialog();
+            _RefreshPeoplList();
         }
 
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,9 +117,7 @@ namespace ProjectDVLD.UserControls
 
         private void DGVGetAllPeople_DoubleClick(object sender, EventArgs e)
         {
-            Form frmUpdatePerson = new frmAddUpdatePerson((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
-            frmUpdatePerson.ShowDialog();
-            _RefreshPeoplList();
+
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -237,6 +239,13 @@ namespace ProjectDVLD.UserControls
         {
             if (cbFilterBy.Text == "Person ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void DGVGetAllPeople_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Form frmUpdatePerson = new frmAddUpdatePerson((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
+            frmUpdatePerson.ShowDialog();
+            _RefreshPeoplList();
         }
     }
 }

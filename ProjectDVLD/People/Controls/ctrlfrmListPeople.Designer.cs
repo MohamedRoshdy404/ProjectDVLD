@@ -162,6 +162,7 @@
             this.DGVGetAllPeople.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGVGetAllPeople.Size = new System.Drawing.Size(1532, 333);
             this.DGVGetAllPeople.TabIndex = 5;
+            this.DGVGetAllPeople.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVGetAllPeople_CellContentClick);
             this.DGVGetAllPeople.DoubleClick += new System.EventHandler(this.DGVGetAllPeople_DoubleClick);
             // 
             // cmsPeople

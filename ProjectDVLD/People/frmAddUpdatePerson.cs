@@ -319,5 +319,10 @@ namespace ProjectDVLD.People
         {
             this.Close();
         }
+
+        private void txtEmail_Validating_1(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }
