@@ -20,3 +20,4 @@ C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVL
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.People.frmShowPersonInfo.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.People.Controls.ctrlPersonCardWithFilter.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.People.frmFindPerson.resources
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.Users.frmGetAllUsers.resources

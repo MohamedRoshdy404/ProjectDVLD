@@ -73,7 +73,7 @@
             // ssToolStripMenuItem
             // 
             this.ssToolStripMenuItem.Name = "ssToolStripMenuItem";
-            this.ssToolStripMenuItem.Size = new System.Drawing.Size(180, 36);
+            this.ssToolStripMenuItem.Size = new System.Drawing.Size(110, 36);
             this.ssToolStripMenuItem.Text = "ss";
             this.ssToolStripMenuItem.Click += new System.EventHandler(this.ssToolStripMenuItem_Click);
             // 
@@ -101,6 +101,7 @@
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
             this.usersToolStripMenuItem.Size = new System.Drawing.Size(127, 86);
             this.usersToolStripMenuItem.Text = "Users";
+            this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // accountSettingsToolStripMenuItem
             // 

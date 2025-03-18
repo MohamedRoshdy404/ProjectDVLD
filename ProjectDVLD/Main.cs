@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
+using ProjectDVLD.Users;
 
 namespace ProjectDVLD
 {
@@ -37,6 +38,12 @@ namespace ProjectDVLD
         {
             Form frmShowPersonInfo = new frmFindPerson();
             frmShowPersonInfo.ShowDialog();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmGetAllUsers = new frmGetAllUsers();
+            frmGetAllUsers.ShowDialog();
         }
     }
 }
