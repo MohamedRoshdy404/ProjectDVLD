@@ -25,7 +25,12 @@ namespace ProjectDVLD.People
         public enMode Mode;
         private int _PersonID = -1;
         clsPersonBuisnessLayer _Person;
-        
+
+        // Declare a delegate
+        public delegate void DataBackEventHandler(object sender, int PersonID);
+
+        // Declare an event using the delegate
+        public event DataBackEventHandler DataBack;
 
 
         //clsPersonBuisnessLayer Person = new clsPersonBuisnessLayer();
@@ -223,6 +228,7 @@ namespace ProjectDVLD.People
                 MessageBox.Show($"Data Seved Successfully {_Person.PersonID}" , "Done Seved" , MessageBoxButtons.OK , MessageBoxIcon.Information);
                 lblPersonID.Text = _Person.PersonID.ToString();
                 lblTitle.Text = "Update Person";
+                DataBack?.Invoke(this, _Person.PersonID);
             }
             else
             {

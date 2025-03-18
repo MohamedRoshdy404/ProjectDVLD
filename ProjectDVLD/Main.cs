@@ -32,5 +32,11 @@ namespace ProjectDVLD
             Form frmListPeople = new frmListPeople();
             frmListPeople.ShowDialog();
         }
+
+        private void ssToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmShowPersonInfo = new frmFindPerson();
+            frmShowPersonInfo.ShowDialog();
+        }
     }
 }
