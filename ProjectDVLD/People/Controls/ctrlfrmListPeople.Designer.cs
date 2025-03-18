@@ -97,7 +97,7 @@
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
             "Person ID",
-            "National No.",
+            "National No",
             "First Name",
             "Second Name",
             "Third Name",
