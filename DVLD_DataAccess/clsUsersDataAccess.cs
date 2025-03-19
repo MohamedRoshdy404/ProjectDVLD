@@ -63,7 +63,7 @@ namespace DVLD_DataAccess
 
 
             SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString);
-            string query = "SELECT Users.UserID,  People.PersonID,  People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName as FullName,Users.UserName, Users.Password, Users.IsActive FROM   People INNER JOIN  Users ON People.PersonID = Users.PersonID";
+            string query = "SELECT Users.UserID,  People.PersonID,  People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName as FullName,Users.UserName, Users.IsActive FROM   People INNER JOIN  Users ON People.PersonID = Users.PersonID";
 
             SqlCommand command = new SqlCommand(query, connection);
 

@@ -22,6 +22,19 @@ namespace ProjectDVLD.Users
         private void GetAllUsers_Load(object sender, EventArgs e)
         {
             DGVGetAllUsers.DataSource = clsUsersBuisnessLayer.GetInfoUsers();
+            labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
         }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void picBoxAddPerson_Click(object sender, EventArgs e)
+        {
+            Form frmAddUpdateUser = new frmAddUpdateUser();
+            frmAddUpdateUser.ShowDialog();
+        }
+
     }
 }
