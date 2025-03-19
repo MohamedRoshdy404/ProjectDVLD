@@ -11,18 +11,19 @@ namespace DVLD_Buisness
     public class clsUsersBuisnessLayer
     {
 
-
-        int PersonID {  get; set; }
-        int UserID {  get; set; }
-
-        string FirstName { get; set; }
-        string SecondName { get; set; }
-        string ThirdName { get; set; }
-        string LastName { get; set; }
-        string FullName { get; set; }
-        string UserName { get; set; }
-        string Password { get; set; }
-        short IsActive { get; set; }
+        public enum enMode { AddNew = 0, Update = 1 };
+        public enMode Mode = enMode.AddNew;
+        public int PersonID {  get; set; }
+        public int UserID {  get; set; }
+         
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
+        public string ThirdName { get; set; }
+        public string LastName { get; set; }
+        private string FullName { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public short IsActive { get; set; }
 
 
 
@@ -39,10 +40,12 @@ namespace DVLD_Buisness
             this.Password = "";
             this.IsActive = 0;
 
+            Mode = enMode.AddNew;
+
         }
 
              
-        private clsUsersBuisnessLayer(int PersonID , int UserID, string FirstName, string SecondName, string ThirdName, string LastName, string UserName, string Password, short IsActive)
+        public clsUsersBuisnessLayer(int PersonID , int UserID, string FirstName, string SecondName, string ThirdName, string LastName, string UserName, string Password, short IsActive)
         {
             this.PersonID   = PersonID;
             this.UserID = UserID;
@@ -55,6 +58,8 @@ namespace DVLD_Buisness
             this.Password = Password;
             this.IsActive = IsActive;
 
+
+            Mode = enMode.Update;
 
         }
 
@@ -71,8 +76,46 @@ namespace DVLD_Buisness
             return clsUsersDataAccess.GetInfoUsers();
         }
 
+        private bool _AddNewUser()
+        {
+            this.UserID = clsUsersDataAccess.AddNewUser(this.PersonID , this.UserName , this.Password , this.IsActive);
+
+            return (this.UserID != -1);
+        }
 
 
+
+
+        public bool Save()
+        {
+
+            switch (Mode)
+            {
+
+                case enMode.AddNew:
+                    if (_AddNewUser())
+                    {
+                        Mode = enMode.Update;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                   
+
+
+
+                default:
+
+                    return false;
+            }
+
+
+
+
+
+        }
 
 
 
