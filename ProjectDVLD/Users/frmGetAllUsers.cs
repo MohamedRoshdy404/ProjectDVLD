@@ -19,10 +19,14 @@ namespace ProjectDVLD.Users
 
         }
 
-        private void GetAllUsers_Load(object sender, EventArgs e)
+        private void _RefreshUserList()
         {
             DGVGetAllUsers.DataSource = clsUsersBuisnessLayer.GetInfoUsers();
             labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
+        }
+        private void GetAllUsers_Load(object sender, EventArgs e)
+        {
+            _RefreshUserList();
         }
 
         private void BtnClose_Click(object sender, EventArgs e)
@@ -34,6 +38,7 @@ namespace ProjectDVLD.Users
         {
             Form frmAddUpdateUser = new frmAddUpdateUser();
             frmAddUpdateUser.ShowDialog();
+            _RefreshUserList();
         }
 
     }
