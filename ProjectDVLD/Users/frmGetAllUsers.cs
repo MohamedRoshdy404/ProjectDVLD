@@ -23,6 +23,7 @@ namespace ProjectDVLD.Users
         {
             DGVGetAllUsers.DataSource = clsUsersBuisnessLayer.GetInfoUsers();
             labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
+            cbFilterBy.SelectedIndex = 0;
         }
         private void GetAllUsers_Load(object sender, EventArgs e)
         {
@@ -40,6 +41,7 @@ namespace ProjectDVLD.Users
             frmAddUpdateUser.ShowDialog();
             _RefreshUserList();
         }
+
 
     }
 }

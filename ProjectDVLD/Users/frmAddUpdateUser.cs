@@ -14,10 +14,25 @@ namespace ProjectDVLD.Users
 {
     public partial class frmAddUpdateUser : Form
     {
+
+        public enum enMode { AddNew = 0, Update = 1 };
+        public enMode Mode;
+        private int _UserID = -1;
+        clsUsersBuisnessLayer _User;
+
         public frmAddUpdateUser()
         {
             InitializeComponent();
+            Mode = enMode.AddNew;
         }
+                
+        public frmAddUpdateUser(int UserID)
+        {
+            InitializeComponent();
+            Mode = enMode.Update;
+            _UserID = UserID;
+        }
+
 
         private clsPersonBuisnessLayer _Perosn;
 
@@ -57,7 +72,7 @@ namespace ProjectDVLD.Users
             }
             else
             {
-                MessageBox.Show("Data NOT Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Data NOT Saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
