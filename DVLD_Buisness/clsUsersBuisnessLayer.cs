@@ -63,6 +63,18 @@ namespace DVLD_Buisness
 
         }
 
+               
+        public clsUsersBuisnessLayer(int PersonID ,string UserName, string Password, short IsActive)
+        {
+            this.PersonID   = PersonID;
+            this.UserName = UserName;
+            this.Password = Password;
+            this.IsActive = IsActive;
+
+            Mode = enMode.Update;
+
+        }
+
 
 
 
@@ -74,6 +86,23 @@ namespace DVLD_Buisness
         public static DataTable GetInfoUsers()
         {
             return clsUsersDataAccess.GetInfoUsers();
+        }
+
+
+        public clsUsersBuisnessLayer Find(int UserID)
+        {
+            int PersonID = 0;
+            string UserName = "", Password = "";
+            short IsActive = 0;
+
+            if (clsUsersDataAccess.FindUser(UserID, ref PersonID, ref UserName, ref Password, ref IsActive))
+            {
+                return new clsUsersBuisnessLayer(PersonID , UserName , Password , IsActive);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private bool _AddNewUser()
