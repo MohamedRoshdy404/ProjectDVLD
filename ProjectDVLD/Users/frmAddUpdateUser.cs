@@ -53,7 +53,9 @@ namespace ProjectDVLD.Users
         {
             if (Mode == enMode.AddNew)
             {
+                _User = new clsUsersBuisnessLayer();
                 lblTitle.Text = "Add New User";
+
             }
             else
             {
@@ -68,7 +70,7 @@ namespace ProjectDVLD.Users
             txtUserName.Text = _User.UserName;
             txtPassword.Text = _User.Password;
             txtConfirmPassword.Text = _User.Password;
-            //chkIsActive.Checked = _User.IsActive;
+            chkIsActive.Checked = Convert.ToBoolean( _User.IsActive);
 
 
         }
@@ -76,21 +78,19 @@ namespace ProjectDVLD.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            clsUsersBuisnessLayer User = new clsUsersBuisnessLayer();
-
-            User.PersonID = PersonID;
-            User.UserName = txtUserName.Text;
-            User.Password = txtPassword.Text;
+            _User.PersonID = PersonID;
+            _User.UserName = txtUserName.Text;
+            _User.Password = txtPassword.Text;
             if (chkIsActive.Checked)
-                User.IsActive = 1;
+                _User.IsActive = 1;
             else
-                User.IsActive = 0;
+                _User.IsActive = 0;
 
 
-            if (User.Save())
+            if (_User.Save())
             {
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lblUserID.Text = User.UserID.ToString();
+                lblUserID.Text = _User.UserID.ToString();
             }
             else
             {

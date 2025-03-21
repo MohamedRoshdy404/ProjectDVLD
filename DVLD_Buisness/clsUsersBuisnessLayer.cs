@@ -66,7 +66,7 @@ namespace DVLD_Buisness
                
         public clsUsersBuisnessLayer(int PersonID ,string UserName, string Password, byte IsActive)
         {
-            this.PersonID   = PersonID;
+            this.PersonID = PersonID;
             this.UserName = UserName;
             this.Password = Password;
             this.IsActive = IsActive;
