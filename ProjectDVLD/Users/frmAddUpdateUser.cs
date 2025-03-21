@@ -34,9 +34,6 @@ namespace ProjectDVLD.Users
         }
 
 
-        private clsPersonBuisnessLayer _Perosn;
-
-
         public int PersonID
         {
             get { return ctrlPersonCardWithFilter1.PersonID; }
@@ -51,6 +48,31 @@ namespace ProjectDVLD.Users
             tabControl1.SelectedTab = tabPage2;
             btnSave.Enabled = true;
         }
+
+        private void _ResetDefualtValues()
+        {
+            if (Mode == enMode.AddNew)
+            {
+                lblTitle.Text = "Add New User";
+            }
+            else
+            {
+                lblTitle.Text = "Update User";
+            }
+        }
+        private void _LoadData()
+        {
+            _User = clsUsersBuisnessLayer.Find(_UserID);
+
+            lblUserID.Text = _UserID.ToString();
+            txtUserName.Text = _User.UserName;
+            txtPassword.Text = _User.Password;
+            txtConfirmPassword.Text = _User.Password;
+            //chkIsActive.Checked = _User.IsActive;
+
+
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -79,7 +101,9 @@ namespace ProjectDVLD.Users
 
         private void frmAddUpdateUser_Load(object sender, EventArgs e)
         {
-
+            _ResetDefualtValues();
+            if (Mode == enMode.Update)
+                _LoadData();
         }
     }
 }

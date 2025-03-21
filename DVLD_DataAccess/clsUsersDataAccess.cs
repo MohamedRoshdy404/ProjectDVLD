@@ -200,7 +200,7 @@ namespace DVLD_DataAccess
 
 
                        
-        public static bool FindUser(int UserID, ref int PersonID ,ref string UserName , ref string Password ,ref short IsActive)
+        public static bool FindUser(int UserID, ref int PersonID ,ref string UserName , ref string Password ,ref byte IsActive)
         {
 
             bool IsFound = false;

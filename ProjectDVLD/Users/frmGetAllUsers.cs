@@ -42,6 +42,10 @@ namespace ProjectDVLD.Users
             _RefreshUserList();
         }
 
-
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmAddUpdateUser = new frmAddUpdateUser((int)DGVGetAllUsers.CurrentRow.Cells[0].Value);
+            frmAddUpdateUser.ShowDialog();
+        }
     }
 }

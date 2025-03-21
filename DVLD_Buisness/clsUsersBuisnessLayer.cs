@@ -23,7 +23,7 @@ namespace DVLD_Buisness
         private string FullName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public short IsActive { get; set; }
+        public byte IsActive { get; set; }
 
 
 
@@ -45,7 +45,7 @@ namespace DVLD_Buisness
         }
 
              
-        public clsUsersBuisnessLayer(int PersonID , int UserID, string FirstName, string SecondName, string ThirdName, string LastName, string UserName, string Password, short IsActive)
+        public clsUsersBuisnessLayer(int PersonID , int UserID, string FirstName, string SecondName, string ThirdName, string LastName, string UserName, string Password, byte IsActive)
         {
             this.PersonID   = PersonID;
             this.UserID = UserID;
@@ -64,7 +64,7 @@ namespace DVLD_Buisness
         }
 
                
-        public clsUsersBuisnessLayer(int PersonID ,string UserName, string Password, short IsActive)
+        public clsUsersBuisnessLayer(int PersonID ,string UserName, string Password, byte IsActive)
         {
             this.PersonID   = PersonID;
             this.UserName = UserName;
@@ -89,11 +89,11 @@ namespace DVLD_Buisness
         }
 
 
-        public clsUsersBuisnessLayer Find(int UserID)
+        public static clsUsersBuisnessLayer Find(int UserID)
         {
             int PersonID = 0;
             string UserName = "", Password = "";
-            short IsActive = 0;
+            byte IsActive = 0;
 
             if (clsUsersDataAccess.FindUser(UserID, ref PersonID, ref UserName, ref Password, ref IsActive))
             {
