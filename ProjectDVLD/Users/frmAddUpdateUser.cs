@@ -81,21 +81,32 @@ namespace ProjectDVLD.Users
             _User.PersonID = PersonID;
             _User.UserName = txtUserName.Text;
             _User.Password = txtPassword.Text;
+
             if (chkIsActive.Checked)
                 _User.IsActive = 1;
             else
                 _User.IsActive = 0;
 
-
-            if (_User.Save())
+            if (clsUsersBuisnessLayer.isExist(PersonID))
             {
-                MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                lblUserID.Text = _User.UserID.ToString();
+                MessageBox.Show("The operation could not be completed. This person is linked to another user account, and only one user can be assigned to a single person.", "Data NOT Saved.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Data NOT Saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (_User.Save())
+                {
+                    MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblUserID.Text = _User.UserID.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Data NOT Saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
+
+
+
 
         }
 

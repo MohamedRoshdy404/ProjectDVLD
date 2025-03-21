@@ -64,8 +64,9 @@ namespace DVLD_Buisness
         }
 
                
-        public clsUsersBuisnessLayer(int PersonID ,string UserName, string Password, byte IsActive)
+        public clsUsersBuisnessLayer(int UserID , int PersonID ,string UserName, string Password, byte IsActive)
         {
+            this.UserID = UserID;
             this.PersonID = PersonID;
             this.UserName = UserName;
             this.Password = Password;
@@ -97,7 +98,7 @@ namespace DVLD_Buisness
 
             if (clsUsersDataAccess.FindUser(UserID, ref PersonID, ref UserName, ref Password, ref IsActive))
             {
-                return new clsUsersBuisnessLayer(PersonID , UserName , Password , IsActive);
+                return new clsUsersBuisnessLayer(UserID , PersonID , UserName , Password , IsActive);
             }
             else
             {
@@ -105,12 +106,40 @@ namespace DVLD_Buisness
             }
         }
 
+
+
+        public static bool isExist(int PersonID)
+        {
+            return clsUsersDataAccess.isExist(PersonID);
+        }        
+
+
+
         private bool _AddNewUser()
         {
             this.UserID = clsUsersDataAccess.AddNewUser(this.PersonID , this.UserName , this.Password , this.IsActive);
 
             return (this.UserID != -1);
         }
+
+
+        private bool _UpdateUser()
+        {
+            return clsUsersDataAccess.UpdateUser(this.UserID,this.UserName, this.Password, this.IsActive);
+        }
+
+
+        public static bool DeleteUser(int UserID)
+        {
+            return clsUsersDataAccess.DeleteUser(UserID);
+        }
+                
+
+
+
+
+
+
 
 
 
@@ -132,6 +161,9 @@ namespace DVLD_Buisness
                         return false;
                     }
                    
+                    case enMode.Update:
+
+                      return  _UpdateUser();
 
 
 

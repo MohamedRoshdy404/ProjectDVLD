@@ -149,33 +149,31 @@ namespace DVLD_DataAccess
 
 
                
-        public static int UpdateUser(int PersonID , string UserName , string Password , short IsActive)
+        public static bool UpdateUser( int UserID,  string UserName , string Password , byte IsActive)
         {
 
-            int UserID = -1;
+            int rowAffected = 0;
 
 
 
             using (SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString))
             {
 
-                string query = "UPDATE Users SET UserName = @UserName, Password = @Password, IsActive = @IsActive WHERE PersonID = @PersonID";
+                string query = "UPDATE Users SET UserName = @UserName, Password = @Password, IsActive = @IsActive WHERE UserID = @UserID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
 
-                    command.Parameters.AddWithValue("UserName", UserName);
-                    command.Parameters.AddWithValue("Password", Password);
-                    command.Parameters.AddWithValue("IsActive", IsActive);
+                    command.Parameters.AddWithValue("@UserID", UserID);
+                    command.Parameters.AddWithValue("@UserName", UserName);
+                    command.Parameters.AddWithValue("@Password", Password);
+                    command.Parameters.AddWithValue("@IsActive", IsActive);
 
                     try
                     {
                         connection.Open();
-                        object result = command.ExecuteScalar();
-                        if (result != null && int.TryParse(result.ToString(), out int insertedID))
-                        {
-                            UserID = insertedID;
-                        }
+                        rowAffected = command.ExecuteNonQuery();
+
                     }
                     catch (SqlException ex) 
                     {
@@ -192,7 +190,7 @@ namespace DVLD_DataAccess
 
             }
 
-            return UserID;
+            return (rowAffected > 0);
 
         }
 
@@ -224,7 +222,8 @@ namespace DVLD_DataAccess
                             if (reader.Read())
                             {
                                 IsFound = true;
-                                
+
+                               
                                 PersonID = Convert.ToInt32(reader["PersonID"]);
                                 UserName = reader["UserName"].ToString();
                                 Password = reader["Password"].ToString();
@@ -257,6 +256,100 @@ namespace DVLD_DataAccess
             }
 
             return IsFound;
+
+        }
+
+
+
+                               
+        public static bool isExist(int PersonID)
+        {
+
+            bool IsFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString))
+            {
+
+                string query = "select isExist = 1  from Users WHERE PersonID = @PersonID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("PersonID", PersonID);
+
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            IsFound = reader.HasRows;
+
+                        }
+
+                    }
+                    catch (SqlException ex) 
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                    finally
+                    {
+                        connection.Close ();
+                    }
+
+                }
+
+
+
+            }
+
+            return IsFound;
+
+        }
+
+
+
+               
+        public static bool DeleteUser(int UserID)
+        {
+
+            int rosAffected = 0;
+
+            using (SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString))
+            {
+
+                string query = "Delete from Users WHERE UserID = @UserID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("UserID", UserID);
+
+
+                    try
+                    {
+                        connection.Open();
+
+                        rosAffected = command.ExecuteNonQuery();
+
+                    }
+                    catch (SqlException ex) 
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                    finally
+                    {
+                        connection.Close ();
+                    }
+
+                }
+
+
+
+            }
+
+            return (rosAffected > 0);
 
         }
 

@@ -137,6 +137,7 @@
             this.AddNewPersontoolStripMenuItem.Name = "AddNewPersontoolStripMenuItem";
             this.AddNewPersontoolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.AddNewPersontoolStripMenuItem.Text = "Add &New User";
+            this.AddNewPersontoolStripMenuItem.Click += new System.EventHandler(this.AddNewPersontoolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -154,6 +155,7 @@
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.deleteToolStripMenuItem.Text = "&Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -210,6 +212,7 @@
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(180, 24);
             this.cbFilterBy.TabIndex = 12;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // labFilterBy
             // 
