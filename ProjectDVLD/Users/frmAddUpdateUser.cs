@@ -31,6 +31,13 @@ namespace ProjectDVLD.Users
             InitializeComponent();
             Mode = enMode.Update;
             _UserID = UserID;
+
+                 //ctrlPersonCardWithFilter card = new ctrlPersonCardWithFilter();
+          
+            
+                // card.LoadPersonInfo(PersonID);
+
+            
         }
 
 
@@ -64,13 +71,24 @@ namespace ProjectDVLD.Users
         }
         private void _LoadData()
         {
+
             _User = clsUsersBuisnessLayer.Find(_UserID);
+
+            if (_User == null)
+            {
+                MessageBox.Show("No User with ID = " + _User, "User Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
+
+                return;
+            }
 
             lblUserID.Text = _UserID.ToString();
             txtUserName.Text = _User.UserName;
             txtPassword.Text = _User.Password;
             txtConfirmPassword.Text = _User.Password;
             chkIsActive.Checked = Convert.ToBoolean( _User.IsActive);
+            ctrlPersonCardWithFilter1.LoadPersonInfo(_User.PersonID);
+            ctrlPersonCardWithFilter1.FilterEnabled = false;
 
 
         }
@@ -78,6 +96,7 @@ namespace ProjectDVLD.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             _User.PersonID = PersonID;
             _User.UserName = txtUserName.Text;
             _User.Password = txtPassword.Text;

@@ -18,6 +18,7 @@ namespace ProjectDVLD.People.Controls
             InitializeComponent();
         }
 
+
         // Define a custom event handler delegate with parameters
 
         public event Action<int> OnPersonSelected;
