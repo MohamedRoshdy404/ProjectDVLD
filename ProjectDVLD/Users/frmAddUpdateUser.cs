@@ -91,6 +91,11 @@ namespace ProjectDVLD.Users
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+            if (txtConfirmPassword.Text != txtPassword.Text)
+            {
+                MessageBox.Show(" The password field does not match the Password Configuration field.", "Data NOT Saved.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             _User.PersonID = PersonID;
             _User.UserName = txtUserName.Text;
             _User.Password = txtPassword.Text;
@@ -102,10 +107,8 @@ namespace ProjectDVLD.Users
 
             if (clsUsersBuisnessLayer.isExist(PersonID))
             {
-                MessageBox.Show("The operation could not be completed. This person is linked to another user account, and only one user can be assigned to a single person.", "Data NOT Saved.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
+                //MessageBox.Show("The operation could not be completed. This person is linked to another user account, and only one user can be assigned to a single person.", "Data NOT Saved.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 if (_User.Save())
                 {
                     MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -115,6 +118,11 @@ namespace ProjectDVLD.Users
                 {
                     MessageBox.Show("Data NOT Saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                 MessageBox.Show("This user does not exist.", "Data NOT Saved.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
 
 
@@ -128,6 +136,38 @@ namespace ProjectDVLD.Users
             _ResetDefualtValues();
             if (Mode == enMode.Update)
                 _LoadData();
+
+
+        }
+
+
+        private void txtPassword_Validating(object sender,  CancelEventArgs e)
+        {
+            TextBox Temp  = ((TextBox)sender);
+            if (string.IsNullOrWhiteSpace(Temp.Text))
+            {
+                e.Cancel = true;
+                Temp.Focus();
+                errorProvider1.SetError(Temp, "This field must not be empty.");
+            }
+            else
+            {
+                if(txtConfirmPassword.Text != txtPassword.Text )         
+                {
+                    //e.Cancel = true;
+                    //Temp.Focus();
+                    errorProvider1.SetError(Temp, "Password confirmation does not match password.");
+                }
+                else
+                {
+                    e.Cancel = false;
+                    errorProvider1.SetError(txtConfirmPassword, "");
+                }
+
+            }
+
+
+
 
 
         }

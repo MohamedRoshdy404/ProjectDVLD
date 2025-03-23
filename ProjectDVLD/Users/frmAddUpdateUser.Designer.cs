@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddUpdateUser));
             this.lblTitle = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnPersonInfoNext = new System.Windows.Forms.Button();
+            this.ctrlPersonCardWithFilter1 = new ProjectDVLD.People.Controls.ctrlPersonCardWithFilter();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblUserID = new System.Windows.Forms.Label();
@@ -49,7 +51,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.ctrlPersonCardWithFilter1 = new ProjectDVLD.People.Controls.ctrlPersonCardWithFilter();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -57,6 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -108,6 +111,16 @@
             this.btnPersonInfoNext.Text = "Next";
             this.btnPersonInfoNext.UseVisualStyleBackColor = true;
             this.btnPersonInfoNext.Click += new System.EventHandler(this.btnPersonInfoNext_Click);
+            // 
+            // ctrlPersonCardWithFilter1
+            // 
+            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
+            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(24, 25);
+            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4);
+            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
+            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
+            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(1280, 508);
+            this.ctrlPersonCardWithFilter1.TabIndex = 121;
             // 
             // tabPage2
             // 
@@ -194,6 +207,7 @@
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(167, 22);
             this.txtConfirmPassword.TabIndex = 137;
+            this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // label1
             // 
@@ -237,6 +251,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(167, 22);
             this.txtPassword.TabIndex = 132;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // pictureBox1
             // 
@@ -300,15 +315,9 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // ctrlPersonCardWithFilter1
+            // errorProvider1
             // 
-            this.ctrlPersonCardWithFilter1.FilterEnabled = true;
-            this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(24, 25);
-            this.ctrlPersonCardWithFilter1.Margin = new System.Windows.Forms.Padding(4);
-            this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
-            this.ctrlPersonCardWithFilter1.ShowAddPerson = true;
-            this.ctrlPersonCardWithFilter1.Size = new System.Drawing.Size(1280, 508);
-            this.ctrlPersonCardWithFilter1.TabIndex = 121;
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAddUpdateUser
             // 
@@ -333,6 +342,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,5 +370,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

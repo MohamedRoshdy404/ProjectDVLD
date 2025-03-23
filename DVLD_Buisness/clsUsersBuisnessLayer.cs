@@ -45,23 +45,23 @@ namespace DVLD_Buisness
         }
 
              
-        public clsUsersBuisnessLayer(int PersonID , int UserID, string FirstName, string SecondName, string ThirdName, string LastName, string UserName, string Password, byte IsActive)
-        {
-            this.PersonID   = PersonID;
-            this.UserID = UserID;
-            this.FirstName = FirstName;
-            this.SecondName = SecondName;
-            this.ThirdName = ThirdName;
-            this.LastName = LastName;
-            this.FullName = FirstName + " " + SecondName + " " + ThirdName + " " + LastName  ; 
-            this.UserName = UserName;
-            this.Password = Password;
-            this.IsActive = IsActive;
+        //public clsUsersBuisnessLayer(int PersonID , int UserID, string FirstName, string SecondName, string ThirdName, string LastName, string UserName, string Password, byte IsActive)
+        //{
+        //    this.PersonID   = PersonID;
+        //    this.UserID = UserID;
+        //    this.FirstName = FirstName;
+        //    this.SecondName = SecondName;
+        //    this.ThirdName = ThirdName;
+        //    this.LastName = LastName;
+        //    this.FullName = FirstName + " " + SecondName + " " + ThirdName + " " + LastName  ; 
+        //    this.UserName = UserName;
+        //    this.Password = Password;
+        //    this.IsActive = IsActive;
 
 
-            Mode = enMode.Update;
+        //    Mode = enMode.Update;
 
-        }
+        //}
 
                
         public clsUsersBuisnessLayer(int UserID , int PersonID ,string UserName, string Password, byte IsActive)
