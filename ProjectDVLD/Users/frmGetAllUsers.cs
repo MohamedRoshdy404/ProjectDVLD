@@ -1,4 +1,6 @@
 ﻿using DVLD_Buisness;
+using ProjectDVLD.People;
+using ProjectDVLD.People.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,8 +46,8 @@ namespace ProjectDVLD.Users
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmAddUpdateUser = new frmAddUpdateUser((int)DGVGetAllUsers.CurrentRow.Cells[0].Value );
-            
+            Form frmAddUpdateUser = new frmAddUpdateUser((int)DGVGetAllUsers.CurrentRow.Cells[0].Value);
+
             frmAddUpdateUser.ShowDialog();
             _RefreshUserList();
         }

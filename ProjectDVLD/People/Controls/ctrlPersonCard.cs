@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,6 +55,23 @@ namespace ProjectDVLD.People.Controls
         }
 
 
+
+        private void _LoadPersonImage()
+        {
+            if (_Person.Gender == 0)
+                pbPersonImage.Image = Resources.Male_512;
+            else
+                pbPersonImage.Image = Resources.Female_512;
+
+            string ImagePath = _Person.ImagePath;
+            if (ImagePath != "")
+                if (File.Exists(ImagePath))
+                    pbPersonImage.ImageLocation = ImagePath;
+                else
+                    MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
         private void _FillPersonInfo()
         {
             llEditPersonInfo.Enabled = true;
@@ -67,12 +85,7 @@ namespace ProjectDVLD.People.Controls
             lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
             lblCountry.Text = clsCountriesBuisnessLayer.Find(_Person.NationalityCountryID).CountryName;
             lblAddress.Text = _Person.Address;
-            if (_Person.ImagePath != "")
-            {
-                pbPersonImage.ImageLocation = _Person.ImagePath;
-            }
-
-
+            _LoadPersonImage();
 
         }
 
@@ -108,6 +121,7 @@ namespace ProjectDVLD.People.Controls
         {
             Form frmUpdatePerson = new frmAddUpdatePerson(_PersonID);
             frmUpdatePerson.ShowDialog();
+            LoadPersonInfo(_PersonID);
         }
     }
 }

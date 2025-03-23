@@ -1,4 +1,5 @@
 ﻿using DVLD_Buisness;
+using ProjectDVLD.People;
 using ProjectDVLD.People.Controls;
 using System;
 using System.Collections.Generic;
@@ -32,14 +33,7 @@ namespace ProjectDVLD.Users
             Mode = enMode.Update;
             _UserID = UserID;
 
-                 //ctrlPersonCardWithFilter card = new ctrlPersonCardWithFilter();
-          
-            
-                // card.LoadPersonInfo(PersonID);
-
-            
         }
-
 
         public int PersonID
         {
@@ -134,6 +128,8 @@ namespace ProjectDVLD.Users
             _ResetDefualtValues();
             if (Mode == enMode.Update)
                 _LoadData();
+
+
         }
     }
 }
