@@ -46,21 +46,38 @@ namespace ProjectDVLD.Users
 
         private void btnPersonInfoNext_Click(object sender, EventArgs e)
         {
-            
-            if (clsUsersBuisnessLayer.isExist(PersonID))
+
+
+            if (Mode == enMode.Update)
             {
-                if (Mode == enMode.Update)
+                tabControl1.SelectedTab = tabPage2;
+                btnSave.Enabled = true;
+                tabControl1.TabPages["tabPage2"].Enabled = true;
+                return;
+            }
+
+
+            if (ctrlPersonCardWithFilter1.PersonID != -1)
+            {
+
+
+                if (clsUsersBuisnessLayer.isExist(ctrlPersonCardWithFilter1.PersonID))
+                {
+                    MessageBox.Show("Selected Person already has a user, choose another one.", "Select another Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ctrlPersonCardWithFilter1.FilterFocus();
+                }
+                else
                 {
                     tabControl1.SelectedTab = tabPage2;
                     btnSave.Enabled = true;
                     tabControl1.TabPages["tabPage2"].Enabled = true;
                 }
 
-                //MessageBox.Show("The operation could not be completed. This person is linked to another user account, and only one user can be assigned to a single person.", "Data NOT Saved.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-
+                MessageBox.Show("Please Select a Person", "Select a Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ctrlPersonCardWithFilter1.FilterFocus();
             }
 
 
