@@ -46,12 +46,33 @@ namespace ProjectDVLD.Users
 
         private void btnPersonInfoNext_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedTab = tabPage2;
-            btnSave.Enabled = true;
+            
+            if (clsUsersBuisnessLayer.isExist(PersonID))
+            {
+                if (Mode == enMode.Update)
+                {
+                    tabControl1.SelectedTab = tabPage2;
+                    btnSave.Enabled = true;
+                    tabControl1.TabPages["tabPage2"].Enabled = true;
+                }
+
+                //MessageBox.Show("The operation could not be completed. This person is linked to another user account, and only one user can be assigned to a single person.", "Data NOT Saved.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+
+            }
+
+
         }
 
+        
+        
         private void _ResetDefualtValues()
         {
+            btnSave.Enabled = false;
+            tabControl1.TabPages["tabPage2"].Enabled = false;
+
             if (Mode == enMode.AddNew)
             {
                 _User = new clsUsersBuisnessLayer();
@@ -67,6 +88,7 @@ namespace ProjectDVLD.Users
         {
 
             _User = clsUsersBuisnessLayer.Find(_UserID);
+            //tabControl1.TabPages["tabPage2"].Enabled = true;
 
             if (_User == null)
             {
@@ -133,10 +155,10 @@ namespace ProjectDVLD.Users
 
         private void frmAddUpdateUser_Load(object sender, EventArgs e)
         {
+            tabControl1.SelectedTab = tabControl1.TabPages[0];
             _ResetDefualtValues();
             if (Mode == enMode.Update)
                 _LoadData();
-
 
         }
 
@@ -165,10 +187,6 @@ namespace ProjectDVLD.Users
                 }
 
             }
-
-
-
-
 
         }
     }

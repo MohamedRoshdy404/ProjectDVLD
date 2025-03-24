@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DVLD_Buisness;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ProjectDVLD.People.Controls
 {
@@ -156,7 +157,6 @@ namespace ProjectDVLD.People.Controls
             // Check if the pressed key is Enter (character code 13)
             if (e.KeyChar == (char)13)
             {
-
                 btnFind.PerformClick();
             }
 
@@ -165,11 +165,7 @@ namespace ProjectDVLD.People.Controls
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
-        {
-            cbFilterBy.SelectedIndex = 0;
-            txtFilterValue.Focus();
-        }
+
 
         private void txtFilterValue_Validating(object sender, CancelEventArgs e)
         {
@@ -184,6 +180,18 @@ namespace ProjectDVLD.People.Controls
                 errorProvider1.SetError(txtFilterValue, null);
             }
         }
+
+        private void gbFilters_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctrlPersonCardWithFilter_Load(object sender, EventArgs e)
+        {
+            cbFilterBy.SelectedIndex = 0;
+            txtFilterValue.Select();
+        }
+
 
 
     }
