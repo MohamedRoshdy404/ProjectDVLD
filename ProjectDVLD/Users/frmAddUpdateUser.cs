@@ -144,29 +144,15 @@ namespace ProjectDVLD.Users
             else
                 _User.IsActive = 0;
 
-            if (clsUsersBuisnessLayer.isExist(PersonID))
+            if (_User.Save())
             {
-                //MessageBox.Show("The operation could not be completed. This person is linked to another user account, and only one user can be assigned to a single person.", "Data NOT Saved.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                if (_User.Save())
-                {
-                    MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lblUserID.Text = _User.UserID.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Data NOT Saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lblUserID.Text = _User.UserID.ToString();
             }
             else
             {
-                 MessageBox.Show("This user does not exist.", "Data NOT Saved.", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Data NOT Saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-
-
 
         }
 
