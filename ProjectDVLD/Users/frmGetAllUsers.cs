@@ -141,11 +141,6 @@ namespace ProjectDVLD.Users
                     FilterColumn = "FullName";
                     break;
 
-                    //case "IsActive":
-                    //    FilterColumn = "IsActive";
-                    //    break;
-
-
             }
 
 
@@ -153,7 +148,7 @@ namespace ProjectDVLD.Users
             if (txtFilter.Text.Trim() == "" || FilterColumn == "None")
             {
                 _dtUsers.DefaultView.RowFilter = "";
-                labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
+                labRecordsCount.Text = _dtUsers.Rows.Count.ToString();
                 return;
             }
 
@@ -162,6 +157,8 @@ namespace ProjectDVLD.Users
 
             else
                 _dtUsers.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", FilterColumn, txtFilter.Text);
+
+                labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
 
 
         }
@@ -196,6 +193,8 @@ namespace ProjectDVLD.Users
                 _dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumnIsActive, cbIsActive.Tag);
             else
                 _dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumnIsActive, cbIsActive.Tag);
+
+            labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
 
         }
     }
