@@ -20,7 +20,13 @@ namespace DVLD_Buisness
         public string SecondName { get; set; }
         public string ThirdName { get; set; }
         public string LastName { get; set; }
-        private string FullName { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + SecondName + " " + ThirdName + " " + LastName;
+            }
+        }
         public string UserName { get; set; }
         public string Password { get; set; }
         public byte IsActive { get; set; }
@@ -44,16 +50,15 @@ namespace DVLD_Buisness
 
         }
 
-             
-        //public clsUsersBuisnessLayer(int PersonID , int UserID, string FirstName, string SecondName, string ThirdName, string LastName, string UserName, string Password, byte IsActive)
+
+        //public clsUsersBuisnessLayer(int PersonID, int UserID, string FirstName, string SecondName, string ThirdName, string LastName, string UserName, string Password, byte IsActive)
         //{
-        //    this.PersonID   = PersonID;
+        //    this.PersonID = PersonID;
         //    this.UserID = UserID;
         //    this.FirstName = FirstName;
         //    this.SecondName = SecondName;
         //    this.ThirdName = ThirdName;
         //    this.LastName = LastName;
-        //    this.FullName = FirstName + " " + SecondName + " " + ThirdName + " " + LastName  ; 
         //    this.UserName = UserName;
         //    this.Password = Password;
         //    this.IsActive = IsActive;
@@ -63,7 +68,7 @@ namespace DVLD_Buisness
 
         //}
 
-               
+
         public clsUsersBuisnessLayer(int UserID , int PersonID ,string UserName, string Password, byte IsActive)
         {
             this.UserID = UserID;
@@ -79,10 +84,10 @@ namespace DVLD_Buisness
 
 
 
-        public static DataTable GetAllUsers()
-        {
-            return clsUsersDataAccess.GetAllUsers();
-        }
+        //public static DataTable GetAllUsers()
+        //{
+        //    return clsUsersDataAccess.GetInfoUsers();
+        //}
                 
         public static DataTable GetInfoUsers()
         {

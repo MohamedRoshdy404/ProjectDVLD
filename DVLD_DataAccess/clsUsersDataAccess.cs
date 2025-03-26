@@ -14,45 +14,45 @@ namespace DVLD_DataAccess
 
 
 
-        public static DataTable GetAllUsers()
-        {
-            DataTable dtUsers = new DataTable();
+        //public static DataTable GetAllUsers()
+        //{
+        //    DataTable dtUsers = new DataTable();
 
 
 
-            SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString);
-            string query = "select * from Users";
-            SqlCommand command = new SqlCommand(query, connection);
+        //    SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString);
+        //    string query = "select * from Users";
+        //    SqlCommand command = new SqlCommand(query, connection);
 
-            try
-            {
-                connection.Open();
+        //    try
+        //    {
+        //        connection.Open();
 
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    dtUsers.Load(reader);
-                }
+        //        SqlDataReader reader = command.ExecuteReader();
+        //        if (reader.HasRows)
+        //        {
+        //            dtUsers.Load(reader);
+        //        }
 
-                reader.Close();
-
-
-            }
-            catch (Exception ex)
-            {
-                 Console.WriteLine("Error: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
+        //        reader.Close();
 
 
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //         Console.WriteLine("Error: " + ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //    }
 
 
 
-            return dtUsers;
-        }
+
+
+        //    return dtUsers;
+        //}
 
 
         
@@ -64,6 +64,7 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString);
             string query = "SELECT Users.UserID,  People.PersonID,  People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName as FullName,Users.UserName, Users.IsActive FROM   People INNER JOIN  Users ON People.PersonID = Users.PersonID";
+            //string query = "SELECT Users.UserID,  People.PersonID,  People.FirstName , People.SecondName , People.ThirdName , People.LastName , Users.UserName, Users.IsActive FROM   People INNER JOIN  Users ON People.PersonID = Users.PersonID";
 
             SqlCommand command = new SqlCommand(query, connection);
 

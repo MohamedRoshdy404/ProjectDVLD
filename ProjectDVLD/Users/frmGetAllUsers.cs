@@ -20,10 +20,17 @@ namespace ProjectDVLD.Users
             InitializeComponent();
 
         }
+        private static DataTable  _dtAllUsers = clsUsersBuisnessLayer.GetInfoUsers();
+
+        private  DataTable _dtUsers = _dtAllUsers.DefaultView.ToTable(false , "UserID", "PersonID", "FullName", "UserName", "IsActive");
 
         private void _RefreshUserList()
         {
-            DGVGetAllUsers.DataSource = clsUsersBuisnessLayer.GetInfoUsers();
+
+            _dtAllUsers = clsUsersBuisnessLayer.GetInfoUsers();
+            _dtUsers = _dtAllUsers.DefaultView.ToTable(false, "UserID", "PersonID", "FullName", "UserName", "IsActive");
+
+            DGVGetAllUsers.DataSource = _dtUsers;
             labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
             cbFilterBy.SelectedIndex = 0;
         }
@@ -54,7 +61,22 @@ namespace ProjectDVLD.Users
 
         private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtFilter.Visible = (cbFilterBy.Text != "None");
+
+            if (cbFilterBy.Text == "Is Active")
+            {
+                txtFilter.Visible = false;
+                cbIsActive.Visible = true;
+                cbIsActive.SelectedIndex = 0;
+            }
+            else
+            {
+                txtFilter.Visible = (cbFilterBy.Text != "None");
+                txtFilter.Focus();
+                cbIsActive.Visible = false;
+            }
+
+
+
         }
 
         private void AddNewPersontoolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +115,87 @@ namespace ProjectDVLD.Users
 
 
 
+
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        { 
+             string FilterColumn = "";
+
+            switch (cbFilterBy.Text)
+            {
+
+                case "UserName":
+                    FilterColumn = "UserName";
+                    break;
+
+                case "User ID":
+                    FilterColumn = "UserID";
+                    break;
+
+                case "Person ID":
+                    FilterColumn = "PersonID";
+                    break;
+
+                case "Full Name":
+                    FilterColumn = "FullName";
+                    break;
+
+                    //case "IsActive":
+                    //    FilterColumn = "IsActive";
+                    //    break;
+
+
+            }
+
+
+
+            if (txtFilter.Text.Trim() == "" || FilterColumn == "None")
+            {
+                _dtUsers.DefaultView.RowFilter = "";
+                labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
+                return;
+            }
+
+            if (FilterColumn == "PersonID" || FilterColumn == "UserID")
+                _dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilter.Text);
+
+            else
+                _dtUsers.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", FilterColumn, txtFilter.Text);
+
+
+        }
+
+        private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string FilterColumnIsActive = "IsActive";
+            switch (cbIsActive.Text)
+            {
+                case "Yes":
+                    cbIsActive.Tag = 1;
+                    break;
+
+                case "No":
+                    cbIsActive.Tag = 0;
+                    break;
+
+            }
+
+
+
+            if (cbIsActive.Text.Trim() == "All")
+            {
+                _dtUsers.DefaultView.RowFilter = "";
+                labRecordsCount.Text = _dtUsers.Rows.Count.ToString();
+                return;
+            }
+
+
+            if (cbIsActive.Text == "Yes")
+
+                _dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumnIsActive, cbIsActive.Tag);
+            else
+                _dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumnIsActive, cbIsActive.Tag);
 
         }
     }
