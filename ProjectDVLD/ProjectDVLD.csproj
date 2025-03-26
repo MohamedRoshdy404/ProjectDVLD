@@ -101,6 +101,12 @@
     <Compile Include="People\Controls\ctrlfrmListPeople.Designer.cs">
       <DependentUpon>ctrlfrmListPeople.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\Control\ctrlUserCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users\Control\ctrlUserCard.Designer.cs">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\frmAddUpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     </Compile>
     <Compile Include="Users\frmGetAllUsers.Designer.cs">
       <DependentUpon>frmGetAllUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users\frmUserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUserInfo.Designer.cs">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -147,11 +159,17 @@
     <EmbeddedResource Include="People\Controls\ctrlfrmListPeople.resx">
       <DependentUpon>ctrlfrmListPeople.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Users\Control\ctrlUserCard.resx">
+      <DependentUpon>ctrlUserCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\frmAddUpdateUser.resx">
       <DependentUpon>frmAddUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\frmGetAllUsers.resx">
       <DependentUpon>frmGetAllUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUserInfo.resx">
+      <DependentUpon>frmUserInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,5 +197,6 @@
     <None Include="Icons\Female 512.png" />
     <None Include="Icons\Male 512.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

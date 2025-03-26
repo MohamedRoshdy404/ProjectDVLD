@@ -197,5 +197,11 @@ namespace ProjectDVLD.Users
             labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
 
         }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmUserInfo = new frmUserInfo((int)DGVGetAllUsers.CurrentRow.Cells[0].Value);
+            frmUserInfo.ShowDialog();
+        }
     }
 }
