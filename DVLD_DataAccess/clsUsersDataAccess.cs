@@ -99,6 +99,54 @@ namespace DVLD_DataAccess
         }
 
 
+
+
+
+        public static bool FindUserByUserNameAndPasswordAndIsActive(ref int UserID, ref int PersonID, string UserName, string Password, ref byte IsActive)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString))
+            {
+                string query = "select UserID , PersonID , UserName , Password , IsActive from Users where UserName = @UserName and Password = @Password";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserName", UserName);
+                    command.Parameters.AddWithValue("@Password", Password);
+
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+
+
+                                UserID = (int)reader["UserID"];
+                                PersonID = (int)reader["PersonID"];
+                                UserName = reader["UserName"]?.ToString() ?? "";
+                                Password = reader["Password"]?.ToString() ?? "";
+                                IsActive = Convert.ToByte(reader["IsActive"]);
+
+
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                }
+            }
+
+            return isFound;
+        }
+
+
         public static int AddNewUser(int PersonID , string UserName , string Password , short IsActive)
         {
 

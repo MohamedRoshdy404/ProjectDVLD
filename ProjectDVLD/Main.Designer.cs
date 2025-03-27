@@ -37,6 +37,8 @@
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbLoggedinUser = new System.Windows.Forms.Label();
+            this.lbtxtUserName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -122,12 +124,35 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // lbLoggedinUser
+            // 
+            this.lbLoggedinUser.AutoSize = true;
+            this.lbLoggedinUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoggedinUser.Location = new System.Drawing.Point(1326, 676);
+            this.lbLoggedinUser.Name = "lbLoggedinUser";
+            this.lbLoggedinUser.Size = new System.Drawing.Size(127, 18);
+            this.lbLoggedinUser.TabIndex = 2;
+            this.lbLoggedinUser.Text = "Loggedin User: ";
+            // 
+            // lbtxtUserName
+            // 
+            this.lbtxtUserName.AutoSize = true;
+            this.lbtxtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtxtUserName.ForeColor = System.Drawing.Color.Brown;
+            this.lbtxtUserName.Location = new System.Drawing.Point(1450, 676);
+            this.lbtxtUserName.Name = "lbtxtUserName";
+            this.lbtxtUserName.Size = new System.Drawing.Size(35, 18);
+            this.lbtxtUserName.TabIndex = 3;
+            this.lbtxtUserName.Text = "???";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1621, 772);
+            this.Controls.Add(this.lbtxtUserName);
+            this.Controls.Add(this.lbLoggedinUser);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -157,6 +182,8 @@
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountSettingsToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbLoggedinUser;
+        private System.Windows.Forms.Label lbtxtUserName;
     }
 }
 

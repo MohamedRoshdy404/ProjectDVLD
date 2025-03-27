@@ -113,6 +113,28 @@ namespace DVLD_Buisness
 
 
 
+        public static clsUsersBuisnessLayer FindUserByUserNameAndPasswordAndIsActive(string UserName , string Password )
+        {
+            int PersonID = 0 , UserID = 0;
+            byte IsActive = 0;
+
+            if (clsUsersDataAccess.FindUserByUserNameAndPasswordAndIsActive(ref UserID, ref PersonID,  UserName,  Password, ref IsActive))
+            {
+                return new clsUsersBuisnessLayer(UserID , PersonID , UserName , Password , IsActive);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+
+
+
+
+
+
         public static bool isExist(int PersonID)
         {
             return clsUsersDataAccess.isExist(PersonID);

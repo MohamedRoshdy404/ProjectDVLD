@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using ProjectDVLD.Users;
+using ProjectDVLD.Global_Classes;
 
 namespace ProjectDVLD
 {
@@ -24,7 +25,7 @@ namespace ProjectDVLD
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            lbtxtUserName.Text = clsUserInfo.UserName;
         }
 
         private void peopalToolStripMenuItem_Click(object sender, EventArgs e)
