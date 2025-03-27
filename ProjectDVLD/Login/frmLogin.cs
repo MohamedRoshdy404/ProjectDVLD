@@ -21,6 +21,7 @@ namespace ProjectDVLD.Login
         private string path = "data.txt";
         private string spr = "#//#";
         clsUsersBuisnessLayer _User;
+
         public frmLogin()
         {
             InitializeComponent();
@@ -60,17 +61,40 @@ namespace ProjectDVLD.Login
 
             if (_User.IsActive > 0)
             {
-                //clsUserInfo.UserID = _User.UserID;
-                //clsUserInfo.PersonID = _User.PersonID;
-                //clsUserInfo.UserName = _User.UserName;
-                //clsUserInfo.Password = _User.Password;
-                //clsUserInfo.IsActive = _User.IsActive;
 
                 _FillUserInfo();
-                
+
+                // دمج النصوص مع الفاصل #//#
+                string newLine = $"{txtUserNameContent}{spr}{txtPasswordContent}";
+                if (chkRememberMe.Checked)
+                {
+                    try
+                    {
+                        // كتابة السطر الجديد (يستبدل المحتوى القديم)
+                        File.WriteAllText(path, newLine);
+
+                        
+
+                        //MessageBox.Show("تم كتابة السطر الجديد في الملف بنجاح!");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"حدث خطأ: {ex.Message}");
+                    }
+
+
+                }
+                else
+                {
+                    newLine = "";
+                    File.WriteAllText(path, newLine);
+
+                }
+
+
+                this.Hide();
                 Form frmMain = new Main();
                 frmMain.ShowDialog();
-
 
             }
             else
@@ -78,28 +102,6 @@ namespace ProjectDVLD.Login
                 MessageBox.Show("This user is not activated in the system.", "user is not activated.", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
-
-
-
-            //try
-            //{
-
-
-
-            //    // دمج النصوص مع الفاصل #//#
-            //    string newLine = $"{txtUserNameContent}{spr}{txtPasswordContent}";
-
-            //    // كتابة السطر الجديد (يستبدل المحتوى القديم)
-            //    File.WriteAllText(path, newLine);
-
-            //    MessageBox.Show("تم كتابة السطر الجديد في الملف بنجاح!");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"حدث خطأ: {ex.Message}");
-            //}
-
 
 
         }

@@ -11,11 +11,16 @@ using System.IO;
 using System.Windows.Forms;
 using ProjectDVLD.Users;
 using ProjectDVLD.Global_Classes;
+using ProjectDVLD.Login;
 
 namespace ProjectDVLD
 {
     public partial class Main : Form
     {
+
+
+        private string path = "data.txt";
+        private string spr = "#//#";
         public Main()
         {
             InitializeComponent();
@@ -45,6 +50,67 @@ namespace ProjectDVLD
         {
             Form frmGetAllUsers = new frmGetAllUsers();
             frmGetAllUsers.ShowDialog();
+        }
+
+        private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            this.Hide();
+
+
+            Form formLogin = new frmLogin();
+
+
+
+
+
+
+            //Form fromLogin = new frmLogin();
+
+            //try
+            //{
+
+            //    // التحقق من وجود الملف
+            //    if (File.Exists(path))
+            //    {
+            //        // قراءة كامل المحتوى من الملف
+            //        string fileContent = File.ReadAllText(path);
+
+            //        // تقسيم النص بناءً على الفاصل #//#
+            //        string[] parts = fileContent.Split(new[] { spr }, StringSplitOptions.None);
+
+            //        // التأكد من أن هناك جزأين على الأقل
+            //        if (parts.Length == 2)
+            //        {
+            //            // تعبئة الـ TextBoxين بالبيانات
+            //            fromLogin.txtUserName.Text = parts[0]; // الجزء الأول
+            //            txtPassword.Text = parts[1]; // الجزء الثاني
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("تنسيق البيانات في الملف غير صحيح!");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("الملف غير موجود!");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"حدث خطأ: {ex.Message}");
+            //}
+
+
+
+
+            //MessageBox.Show($"{txtUserName.Text}              :    {txtPassword.Text} ");
+
+
+
+            formLogin.ShowDialog();
+
         }
     }
 }
