@@ -62,5 +62,18 @@ namespace ProjectDVLD
             formLogin.ShowDialog();
 
         }
+
+        private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmUserInfo = new frmUserInfo(clsUserInfo.UserID);
+            frmUserInfo.ShowDialog();    
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmChangePassword = new frmChangePassword(clsUserInfo.UserID);
+            frmChangePassword.ShowDialog();
+
+        }
     }
 }
