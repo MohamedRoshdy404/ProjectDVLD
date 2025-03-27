@@ -108,6 +108,15 @@ namespace ProjectDVLD.Login
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+
+
+
+
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
             try
             {
 
@@ -129,7 +138,7 @@ namespace ProjectDVLD.Login
                     }
                     else
                     {
-                        MessageBox.Show("تنسيق البيانات في الملف غير صحيح!");
+                        //MessageBox.Show("تنسيق البيانات في الملف غير صحيح!");
                     }
                 }
                 else
@@ -141,13 +150,6 @@ namespace ProjectDVLD.Login
             {
                 MessageBox.Show($"حدث خطأ: {ex.Message}");
             }
-
-
-
-
-            MessageBox.Show($"{txtUserName.Text}              :    {txtPassword.Text} ");
-
-
 
 
         }

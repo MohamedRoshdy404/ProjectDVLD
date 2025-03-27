@@ -131,7 +131,6 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(230, 34);
             this.txtUserName.TabIndex = 136;
-            this.txtUserName.Text = "admin";
             // 
             // label5
             // 
@@ -166,7 +165,6 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(230, 34);
             this.txtPassword.TabIndex = 137;
-            this.txtPassword.Text = "admin";
             // 
             // pictureBox8
             // 
@@ -213,7 +211,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(422, 584);
+            this.panel2.Size = new System.Drawing.Size(422, 583);
             this.panel2.TabIndex = 1;
             // 
             // label4
@@ -278,13 +276,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 584);
+            this.ClientSize = new System.Drawing.Size(990, 583);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
