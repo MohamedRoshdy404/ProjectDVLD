@@ -106,16 +106,7 @@ namespace ProjectDVLD.Login
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-
-
-
-
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void _LoadDataFromFile()
         {
             try
             {
@@ -151,6 +142,11 @@ namespace ProjectDVLD.Login
                 MessageBox.Show($"حدث خطأ: {ex.Message}");
             }
 
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            _LoadDataFromFile();
 
         }
     }
