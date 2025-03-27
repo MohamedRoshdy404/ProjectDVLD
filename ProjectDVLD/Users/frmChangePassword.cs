@@ -77,7 +77,7 @@ namespace ProjectDVLD.Users
 
         private void frmChangePassword_Load(object sender, EventArgs e)
         {
-
+            btnSave.Focus();
             ctrlUserCard1.LoadUserInfo(_UserID);
 
         }

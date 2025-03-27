@@ -38,11 +38,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.ctrlUserCard1 = new ProjectDVLD.Users.Control.ctrlUserCard();
             this.txtCurrentPassword = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.ctrlUserCard1 = new ProjectDVLD.Users.Control.ctrlUserCard();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -136,13 +136,6 @@
             this.pictureBox3.TabIndex = 144;
             this.pictureBox3.TabStop = false;
             // 
-            // ctrlUserCard1
-            // 
-            this.ctrlUserCard1.Location = new System.Drawing.Point(2, 12);
-            this.ctrlUserCard1.Name = "ctrlUserCard1";
-            this.ctrlUserCard1.Size = new System.Drawing.Size(852, 431);
-            this.ctrlUserCard1.TabIndex = 0;
-            // 
             // txtCurrentPassword
             // 
             this.txtCurrentPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,6 +182,13 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // ctrlUserCard1
+            // 
+            this.ctrlUserCard1.Location = new System.Drawing.Point(2, 12);
+            this.ctrlUserCard1.Name = "ctrlUserCard1";
+            this.ctrlUserCard1.Size = new System.Drawing.Size(852, 431);
+            this.ctrlUserCard1.TabIndex = 0;
             // 
             // frmChangePassword
             // 

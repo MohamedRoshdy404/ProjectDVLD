@@ -25,3 +25,4 @@ C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVL
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.Users.frmUserInfo.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.Users.Control.ctrlUserCard.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.Users.frmChangePassword.resources
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.Login.frmLogin.resources

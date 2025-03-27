@@ -1,4 +1,5 @@
-﻿using ProjectDVLD.People;
+﻿using ProjectDVLD.Login;
+using ProjectDVLD.People;
 using ProjectDVLD.Users;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,9 @@ namespace ProjectDVLD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
-            //Application.Run(new frmGetAllUsers());
+            //Application.Run(new Main());
+            Application.Run(new frmLogin());
+           
         }
     }
 }
