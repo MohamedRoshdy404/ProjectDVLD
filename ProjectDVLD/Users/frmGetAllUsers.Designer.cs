@@ -171,6 +171,7 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
             this.toolStripMenuItem2.Text = "Change Password";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // sendEmailToolStripMenuItem
             // 
@@ -179,6 +180,7 @@
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
             this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.sendEmailToolStripMenuItem.Text = "Send E&mail";
+            this.sendEmailToolStripMenuItem.Click += new System.EventHandler(this.sendEmailToolStripMenuItem_Click);
             // 
             // phoneCallToolStripMenuItem
             // 
@@ -187,6 +189,7 @@
             this.phoneCallToolStripMenuItem.Name = "phoneCallToolStripMenuItem";
             this.phoneCallToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
             this.phoneCallToolStripMenuItem.Text = "Phone &Call";
+            this.phoneCallToolStripMenuItem.Click += new System.EventHandler(this.phoneCallToolStripMenuItem_Click);
             // 
             // txtFilter
             // 

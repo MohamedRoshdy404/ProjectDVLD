@@ -24,3 +24,4 @@ C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Users.frmAddUpdateUser.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Users.frmUserInfo.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Users.Control.ctrlUserCard.resources
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Users.frmChangePassword.resources

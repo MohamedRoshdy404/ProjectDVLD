@@ -30,5 +30,10 @@ namespace ProjectDVLD.Users
         {
             ctrlUserCard1.LoadUserInfo(_UserID);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

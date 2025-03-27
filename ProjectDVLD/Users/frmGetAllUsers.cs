@@ -203,5 +203,21 @@ namespace ProjectDVLD.Users
             Form frmUserInfo = new frmUserInfo((int)DGVGetAllUsers.CurrentRow.Cells[0].Value);
             frmUserInfo.ShowDialog();
         }
+
+        private void sendEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not available now. It will be available later", "Note ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void phoneCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is not available now. It will be available later", "Note ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Form frmChangePassword = new frmChangePassword((int)DGVGetAllUsers.CurrentRow.Cells[0].Value);
+            frmChangePassword.ShowDialog();
+        }
     }
 }
