@@ -128,7 +128,7 @@ namespace ProjectDVLD.Users
 
             _User.Password = txtPassword.Text;
 
-            if (_User.Save())
+            if (_User.ChangePassword())
             {
                 MessageBox.Show($"Data Seved Successfully", "Done Seved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _RestTextBoxValue();

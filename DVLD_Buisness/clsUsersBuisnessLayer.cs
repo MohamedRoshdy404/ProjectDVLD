@@ -81,13 +81,6 @@ namespace DVLD_Buisness
 
         }
 
-
-
-
-        //public static DataTable GetAllUsers()
-        //{
-        //    return clsUsersDataAccess.GetInfoUsers();
-        //}
                 
         public static DataTable GetInfoUsers()
         {
@@ -147,6 +140,12 @@ namespace DVLD_Buisness
             this.UserID = clsUsersDataAccess.AddNewUser(this.PersonID , this.UserName , this.Password , this.IsActive);
 
             return (this.UserID != -1);
+        }
+
+                
+        public bool ChangePassword()
+        {
+            return (clsUsersDataAccess.ChangePassword(this.UserID, this.Password));
         }
 
 

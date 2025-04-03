@@ -64,7 +64,6 @@ namespace DVLD_DataAccess
 
             SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString);
             string query = "SELECT Users.UserID,  People.PersonID,  People.FirstName + ' ' + People.SecondName + ' ' + People.ThirdName + ' ' + People.LastName as FullName,Users.UserName, Users.IsActive FROM   People INNER JOIN  Users ON People.PersonID = Users.PersonID";
-            //string query = "SELECT Users.UserID,  People.PersonID,  People.FirstName , People.SecondName , People.ThirdName , People.LastName , Users.UserName, Users.IsActive FROM   People INNER JOIN  Users ON People.PersonID = Users.PersonID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -217,6 +216,49 @@ namespace DVLD_DataAccess
                     command.Parameters.AddWithValue("@UserName", UserName);
                     command.Parameters.AddWithValue("@Password", Password);
                     command.Parameters.AddWithValue("@IsActive", IsActive);
+
+                    try
+                    {
+                        connection.Open();
+                        rowAffected = command.ExecuteNonQuery();
+
+                    }
+                    catch (SqlException ex) 
+                    {
+                        Console.WriteLine($"Error: {ex.Message}");
+                    }
+                    finally
+                    {
+                        connection.Close ();
+                    }
+
+                }
+
+
+
+            }
+
+            return (rowAffected > 0);
+
+        }
+               
+        public static bool ChangePassword( int UserID,  string Password )
+        {
+
+            int rowAffected = 0;
+
+
+
+            using (SqlConnection connection = new SqlConnection(clsSettingsConnectoinStrinng.connectionString))
+            {
+
+                string query = "UPDATE Users SET Password = @Password WHERE UserID = @UserID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@UserID", UserID);
+                    command.Parameters.AddWithValue("@Password", Password);
 
                     try
                     {
