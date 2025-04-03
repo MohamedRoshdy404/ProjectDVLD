@@ -51,7 +51,7 @@ namespace ProjectDVLD.Login
             string txtPasswordContent = txtPassword.Text;
 
 
-            _User = clsUsersBuisnessLayer.FindUserByUserNameAndPasswordAndIsActive(txtUserNameContent, txtPasswordContent);
+            _User = clsUsersBuisnessLayer.FindUserByUserNameAndPassword(txtUserNameContent, txtPasswordContent);
 
             if (_User == null)
             {

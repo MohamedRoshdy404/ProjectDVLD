@@ -54,9 +54,7 @@ namespace ProjectDVLD
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
-            this.Hide();
+            this.Dispose();
 
             Form formLogin = new frmLogin();
             formLogin.ShowDialog();

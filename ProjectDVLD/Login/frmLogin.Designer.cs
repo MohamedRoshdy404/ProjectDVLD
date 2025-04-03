@@ -86,10 +86,10 @@
             this.chkRememberMe.AutoSize = true;
             this.chkRememberMe.Checked = true;
             this.chkRememberMe.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkRememberMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRememberMe.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkRememberMe.Location = new System.Drawing.Point(187, 295);
             this.chkRememberMe.Name = "chkRememberMe";
-            this.chkRememberMe.Size = new System.Drawing.Size(125, 19);
+            this.chkRememberMe.Size = new System.Drawing.Size(119, 21);
             this.chkRememberMe.TabIndex = 143;
             this.chkRememberMe.Text = "Remember Me.";
             this.chkRememberMe.UseVisualStyleBackColor = true;
