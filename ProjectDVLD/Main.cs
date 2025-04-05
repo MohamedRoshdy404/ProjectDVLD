@@ -38,8 +38,8 @@ namespace ProjectDVLD
 
         private void ssToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frmShowPersonInfo = new frmFindPerson();
-            frmShowPersonInfo.ShowDialog();
+            //Form frmShowPersonInfo = new frmFindPerson();
+            //frmShowPersonInfo.ShowDialog();
         }
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
