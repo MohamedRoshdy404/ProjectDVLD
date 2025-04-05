@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using ProjectDVLD.Users;
 using ProjectDVLD.Global_Classes;
 using ProjectDVLD.Login;
+using ProjectDVLD.Applications.Application_Types;
 
 namespace ProjectDVLD
 {
@@ -67,6 +68,12 @@ namespace ProjectDVLD
             Form frmChangePassword = new frmChangePassword(clsUserInfo.UserID);
             frmChangePassword.ShowDialog();
 
+        }
+
+        private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmListApplicationTypes = new frmListApplicationTypes();
+            frmListApplicationTypes.ShowDialog();
         }
     }
 }
