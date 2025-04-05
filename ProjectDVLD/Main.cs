@@ -17,15 +17,11 @@ namespace ProjectDVLD
 {
     public partial class Main : Form
     {
-
-
-        private string path = "data.txt";
-        private string spr = "#//#";
-        public Main()
+        frmLogin _frmLogin;
+        public Main(frmLogin frm)
         {
             InitializeComponent();
-
-            //dateTimePicker1.MaxDate = DateTime.Today.AddYears(-18);
+            _frmLogin = frm;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -54,10 +50,9 @@ namespace ProjectDVLD
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            clsUserInfo.CurrentUser = null;
+            _frmLogin.ShowDialog();
             this.Dispose();
-
-            Form formLogin = new frmLogin();
-            formLogin.ShowDialog();
 
         }
 

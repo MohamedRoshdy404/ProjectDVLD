@@ -47,27 +47,7 @@ namespace DVLD_Buisness
             this.IsActive = 0;
 
             Mode = enMode.AddNew;
-
         }
-
-
-        //public clsUsersBuisnessLayer(int PersonID, int UserID, string FirstName, string SecondName, string ThirdName, string LastName, string UserName, string Password, byte IsActive)
-        //{
-        //    this.PersonID = PersonID;
-        //    this.UserID = UserID;
-        //    this.FirstName = FirstName;
-        //    this.SecondName = SecondName;
-        //    this.ThirdName = ThirdName;
-        //    this.LastName = LastName;
-        //    this.UserName = UserName;
-        //    this.Password = Password;
-        //    this.IsActive = IsActive;
-
-
-        //    Mode = enMode.Update;
-
-        //}
-
 
         public clsUsersBuisnessLayer(int UserID , int PersonID ,string UserName, string Password, byte IsActive)
         {
@@ -78,7 +58,6 @@ namespace DVLD_Buisness
             this.IsActive = IsActive;
 
             Mode = enMode.Update;
-
         }
 
                 
@@ -86,7 +65,6 @@ namespace DVLD_Buisness
         {
             return clsUsersDataAccess.GetInfoUsers();
         }
-
 
         public static clsUsersBuisnessLayer Find(int UserID)
         {
@@ -104,8 +82,6 @@ namespace DVLD_Buisness
             }
         }
 
-
-
         public static clsUsersBuisnessLayer FindUserByUserNameAndPassword(string UserName , string Password )
         {
             int PersonID = 0 , UserID = 0;
@@ -120,13 +96,6 @@ namespace DVLD_Buisness
                 return null;
             }
         }
-
-
-
-
-
-
-
 
         public static bool isExist(int PersonID)
         {
@@ -160,16 +129,6 @@ namespace DVLD_Buisness
             return clsUsersDataAccess.DeleteUser(UserID);
         }
                 
-
-
-
-
-
-
-
-
-
-
         public bool Save()
         {
 
@@ -197,11 +156,6 @@ namespace DVLD_Buisness
 
                     return false;
             }
-
-
-
-
-
         }
 
 

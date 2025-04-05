@@ -20,17 +20,13 @@ namespace ProjectDVLD.Users
             InitializeComponent();
 
         }
-        private static DataTable  _dtAllUsers = clsUsersBuisnessLayer.GetInfoUsers();
-
-        private  DataTable _dtUsers = _dtAllUsers.DefaultView.ToTable(false , "UserID", "PersonID", "FullName", "UserName", "IsActive");
+        private static DataTable  _dtAllUsers;
 
         private void _RefreshUserList()
         {
-
             _dtAllUsers = clsUsersBuisnessLayer.GetInfoUsers();
-            _dtUsers = _dtAllUsers.DefaultView.ToTable(false, "UserID", "PersonID", "FullName", "UserName", "IsActive");
 
-            DGVGetAllUsers.DataSource = _dtUsers;
+            DGVGetAllUsers.DataSource = _dtAllUsers;
             labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
             cbFilterBy.SelectedIndex = 0;
         }
@@ -75,8 +71,6 @@ namespace ProjectDVLD.Users
                 cbIsActive.Visible = false;
             }
 
-
-
         }
 
         private void AddNewPersontoolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,9 +106,6 @@ namespace ProjectDVLD.Users
                         }
                     }
 
-
-
-
               }
               else
               {
@@ -122,9 +113,6 @@ namespace ProjectDVLD.Users
               }
 
             _RefreshUserList();
-
-
-
 
         }
 
@@ -157,16 +145,16 @@ namespace ProjectDVLD.Users
 
             if (txtFilter.Text.Trim() == "" || FilterColumn == "None")
             {
-                _dtUsers.DefaultView.RowFilter = "";
-                labRecordsCount.Text = _dtUsers.Rows.Count.ToString();
+                _dtAllUsers.DefaultView.RowFilter = "";
+                labRecordsCount.Text = _dtAllUsers.Rows.Count.ToString();
                 return;
             }
 
             if (FilterColumn == "PersonID" || FilterColumn == "UserID")
-                _dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilter.Text);
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilter.Text);
 
             else
-                _dtUsers.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", FilterColumn, txtFilter.Text);
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", FilterColumn, txtFilter.Text);
 
                 labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
 
@@ -186,23 +174,26 @@ namespace ProjectDVLD.Users
                     cbIsActive.Tag = 0;
                     break;
 
+                default:
+                    break;
+
             }
 
 
 
             if (cbIsActive.Text.Trim() == "All")
             {
-                _dtUsers.DefaultView.RowFilter = "";
-                labRecordsCount.Text = _dtUsers.Rows.Count.ToString();
+                _dtAllUsers.DefaultView.RowFilter = "";
+                labRecordsCount.Text = _dtAllUsers.Rows.Count.ToString();
                 return;
             }
 
 
             if (cbIsActive.Text == "Yes")
 
-                _dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumnIsActive, cbIsActive.Tag);
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumnIsActive, cbIsActive.Tag);
             else
-                _dtUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumnIsActive, cbIsActive.Tag);
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumnIsActive, cbIsActive.Tag);
 
             labRecordsCount.Text = DGVGetAllUsers.Rows.Count.ToString();
 
@@ -228,6 +219,12 @@ namespace ProjectDVLD.Users
         {
             Form frmChangePassword = new frmChangePassword((int)DGVGetAllUsers.CurrentRow.Cells[0].Value);
             frmChangePassword.ShowDialog();
+        }
+
+        private void txtFilter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (cbFilterBy.Text == "Person ID" || cbFilterBy.Text == "User ID")
+                e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

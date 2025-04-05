@@ -20,7 +20,6 @@ namespace ProjectDVLD.Users
         {
             InitializeComponent();
             _UserID = UserID;
-            _User = clsUsersBuisnessLayer.Find(_UserID);
         }
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
@@ -71,15 +70,25 @@ namespace ProjectDVLD.Users
             txtCurrentPassword.Text = "";
             txtPassword.Text = "";
             txtConfirmPassword.Text = "";
+            txtCurrentPassword.Focus();
         }
 
 
 
         private void frmChangePassword_Load(object sender, EventArgs e)
         {
+
+            _User = clsUsersBuisnessLayer.Find(_UserID);
+
+            if (_User == null)
+            {
+                MessageBox.Show("Could not Find User with id = " + _UserID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
             btnSave.Focus();
             ctrlUserCard1.LoadUserInfo(_UserID);
-
         }
 
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
@@ -130,13 +139,13 @@ namespace ProjectDVLD.Users
 
             if (_User.ChangePassword())
             {
-                MessageBox.Show($"Data Seved Successfully", "Done Seved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Password Chenged Successfully.", "Done Seved", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _RestTextBoxValue();
 
             }
             else
             {
-                MessageBox.Show("Data NOT Saved.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("An error occurred while changing the password.", "Error in the password change process.", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 _RestTextBoxValue();
             }
 

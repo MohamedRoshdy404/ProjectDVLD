@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD_Buisness;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace ProjectDVLD.Global_Classes
     public class  clsUserInfo
     {
 
+         public static clsUsersBuisnessLayer CurrentUser ;
          public static int PersonID { get; set; }
          public static int UserID { get; set; }
          

@@ -51,7 +51,7 @@ namespace ProjectDVLD.Login
             string txtPasswordContent = txtPassword.Text;
 
 
-            _User = clsUsersBuisnessLayer.FindUserByUserNameAndPassword(txtUserNameContent, txtPasswordContent);
+            _User = clsUsersBuisnessLayer.FindUserByUserNameAndPassword(txtUserNameContent.Trim(), txtPasswordContent.Trim());
 
             if (_User == null)
             {
@@ -61,7 +61,6 @@ namespace ProjectDVLD.Login
 
             if (_User.IsActive > 0)
             {
-
                 _FillUserInfo();
 
                 // دمج النصوص مع الفاصل #//#
@@ -72,8 +71,6 @@ namespace ProjectDVLD.Login
                     {
                         // كتابة السطر الجديد (يستبدل المحتوى القديم)
                         File.WriteAllText(path, newLine);
-
-                        
 
                         //MessageBox.Show("تم كتابة السطر الجديد في الملف بنجاح!");
                     }
@@ -91,9 +88,9 @@ namespace ProjectDVLD.Login
 
                 }
 
-
+                clsUserInfo.CurrentUser = _User;
                 this.Hide();
-                Form frmMain = new Main();
+                Form frmMain = new Main(this);
                 frmMain.ShowDialog();
 
             }
