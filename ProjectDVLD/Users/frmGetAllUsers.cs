@@ -94,15 +94,31 @@ namespace ProjectDVLD.Users
               if (MessageBox.Show($"Are you sure you want to delete this user? {UserID} ", "Delete User", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
               {
 
-                    if (clsUsersBuisnessLayer.DeleteUser(UserID))
-                    {
-                        MessageBox.Show("The User has been successfully deleted.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    clsUsersBuisnessLayer User = clsUsersBuisnessLayer.Find(UserID);
+
+
+                    if (User.UserName == "admin")
+                    {
+                        MessageBox.Show("TA user with full admin privileges cannot be deleted.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("The User deletion process has failed.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        if (clsUsersBuisnessLayer.DeleteUser(UserID))
+                        {
+                            MessageBox.Show("The User has been successfully deleted.", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("The User deletion process has failed.", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+
                     }
+
+
 
 
               }
