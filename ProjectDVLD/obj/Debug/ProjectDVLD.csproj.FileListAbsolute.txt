@@ -26,3 +26,5 @@ C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Users.Control.ctrlUserCard.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Users.frmChangePassword.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Login.frmLogin.resources
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Applications.Application_Types.frmEditApplicationType.resources
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Applications.Application_Types.frmListApplicationTypes.resources
