@@ -50,5 +50,12 @@ namespace ProjectDVLD.Applications.Application_Types
             frmEditApplicationType.ShowDialog();
             _RefreshApplicationTypesList();
         }
+
+        private void dgvApplicationTypes_DoubleClick(object sender, EventArgs e)
+        {
+            Form frmEditApplicationType = new frmEditApplicationType((int)dgvApplicationTypes.CurrentRow.Cells[0].Value);
+            frmEditApplicationType.ShowDialog();
+            _RefreshApplicationTypesList();
+        }
     }
 }

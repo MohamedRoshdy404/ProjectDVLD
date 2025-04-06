@@ -149,6 +149,7 @@
             this.dgvApplicationTypes.Size = new System.Drawing.Size(679, 354);
             this.dgvApplicationTypes.TabIndex = 113;
             this.dgvApplicationTypes.TabStop = false;
+            this.dgvApplicationTypes.DoubleClick += new System.EventHandler(this.dgvApplicationTypes_DoubleClick);
             // 
             // cmsApplicationTypes
             // 
@@ -156,7 +157,7 @@
             this.cmsApplicationTypes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editApplicationTypeToolStripMenuItem});
             this.cmsApplicationTypes.Name = "cmsApplicationTypes";
-            this.cmsApplicationTypes.Size = new System.Drawing.Size(225, 64);
+            this.cmsApplicationTypes.Size = new System.Drawing.Size(225, 42);
             // 
             // editApplicationTypeToolStripMenuItem
             // 

@@ -33,6 +33,7 @@ namespace ProjectDVLD.Applications.Application_Types
                 return;
             }
 
+            lblApplicationTypeID.Text = _ApplicationTypeID.ToString();
             txtTitle.Text = _ApplicationType.ApplicationTypeTitle;
             txtFees.Text = _ApplicationType.ApplicationFees.ToString();
 

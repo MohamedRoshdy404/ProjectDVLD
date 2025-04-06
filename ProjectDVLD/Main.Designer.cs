@@ -341,7 +341,7 @@
             // 
             this.lbtxtUserName.AutoSize = true;
             this.lbtxtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtxtUserName.ForeColor = System.Drawing.Color.Brown;
+            this.lbtxtUserName.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lbtxtUserName.Location = new System.Drawing.Point(1450, 676);
             this.lbtxtUserName.Name = "lbtxtUserName";
             this.lbtxtUserName.Size = new System.Drawing.Size(35, 18);
