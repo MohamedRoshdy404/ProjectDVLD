@@ -18,11 +18,11 @@ namespace ProjectDVLD
 {
     public partial class Main : Form
     {
-        frmLogin _frmLogin;
-        public Main(frmLogin frm)
+
+        public Main()
         {
             InitializeComponent();
-            _frmLogin = frm;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,9 +51,10 @@ namespace ProjectDVLD
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            clsUserInfo.CurrentUser = null;
-            _frmLogin.ShowDialog();
             this.Dispose();
+            clsUserInfo.CurrentUser = null;
+            Form frmLogin = new frmLogin();
+            frmLogin.ShowDialog();
 
         }
 

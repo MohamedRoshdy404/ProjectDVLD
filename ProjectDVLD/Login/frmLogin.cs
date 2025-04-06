@@ -90,7 +90,7 @@ namespace ProjectDVLD.Login
 
                 clsUserInfo.CurrentUser = _User;
                 this.Hide();
-                Form frmMain = new Main(this);
+                Form frmMain = new Main();
                 frmMain.ShowDialog();
 
             }
