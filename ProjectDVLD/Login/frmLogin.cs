@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using DVLD_Buisness;
 using ProjectDVLD.Global_Classes;
+using System.Media;
 
 namespace ProjectDVLD.Login
 {
@@ -43,6 +44,12 @@ namespace ProjectDVLD.Login
 
         }
 
+        private void _SoundLogin()
+        {
+            SoundPlayer player = new SoundPlayer("Sounds/mixkit-fantasy-game-success-notification-270.wav");
+            player.Play();
+
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
@@ -88,6 +95,7 @@ namespace ProjectDVLD.Login
 
                 }
 
+                _SoundLogin();
                 clsUserInfo.CurrentUser = _User;
                 this.Hide();
                 Form frmMain = new Main();

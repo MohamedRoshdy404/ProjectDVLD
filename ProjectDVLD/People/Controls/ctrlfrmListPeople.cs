@@ -117,7 +117,9 @@ namespace ProjectDVLD.UserControls
 
         private void DGVGetAllPeople_DoubleClick(object sender, EventArgs e)
         {
-
+            Form frmUpdatePerson = new frmAddUpdatePerson((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
+            frmUpdatePerson.ShowDialog();
+            _RefreshPeoplList();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -241,11 +243,6 @@ namespace ProjectDVLD.UserControls
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void DGVGetAllPeople_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Form frmUpdatePerson = new frmAddUpdatePerson((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
-            frmUpdatePerson.ShowDialog();
-            _RefreshPeoplList();
-        }
+
     }
 }
