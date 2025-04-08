@@ -95,7 +95,7 @@ namespace ProjectDVLD.Login
 
                 }
 
-                _SoundLogin();
+                //_SoundLogin();
                 clsUserInfo.CurrentUser = _User;
                 this.Hide();
                 Form frmMain = new Main();

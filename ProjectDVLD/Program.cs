@@ -22,8 +22,8 @@ namespace ProjectDVLD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main(new frmLogin()));
-            Application.Run(new frmListTestTypes());
-            //Application.Run(new frmLogin());
+            //Application.Run(new frmListTestTypes());
+            Application.Run(new frmLogin());
            
         }
     }

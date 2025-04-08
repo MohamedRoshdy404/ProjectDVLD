@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,9 +37,12 @@
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvTestTypes = new System.Windows.Forms.DataGridView();
+            this.cmsTestTypes = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editTestTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbApplicationTypesmage = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).BeginInit();
+            this.cmsTestTypes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbApplicationTypesmage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +92,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvTestTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTestTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTestTypes.ContextMenuStrip = this.cmsTestTypes;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Quicksand Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,6 +119,23 @@
             this.dgvTestTypes.Size = new System.Drawing.Size(931, 354);
             this.dgvTestTypes.TabIndex = 119;
             this.dgvTestTypes.TabStop = false;
+            this.dgvTestTypes.DoubleClick += new System.EventHandler(this.dgvTestTypes_DoubleClick);
+            // 
+            // cmsTestTypes
+            // 
+            this.cmsTestTypes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editTestTypeToolStripMenuItem});
+            this.cmsTestTypes.Name = "cmsTestTypes";
+            this.cmsTestTypes.Size = new System.Drawing.Size(161, 42);
+            // 
+            // editTestTypeToolStripMenuItem
+            // 
+            this.editTestTypeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editTestTypeToolStripMenuItem.Image")));
+            this.editTestTypeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editTestTypeToolStripMenuItem.Name = "editTestTypeToolStripMenuItem";
+            this.editTestTypeToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
+            this.editTestTypeToolStripMenuItem.Text = "&Edit Test Type";
+            this.editTestTypeToolStripMenuItem.Click += new System.EventHandler(this.editTestTypeToolStripMenuItem_Click);
             // 
             // pbApplicationTypesmage
             // 
@@ -162,6 +184,7 @@
             this.Text = "List Test Types";
             this.Load += new System.EventHandler(this.frmListTestTypes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).EndInit();
+            this.cmsTestTypes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbApplicationTypesmage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,5 +199,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvTestTypes;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ContextMenuStrip cmsTestTypes;
+        private System.Windows.Forms.ToolStripMenuItem editTestTypeToolStripMenuItem;
     }
 }

@@ -18,6 +18,15 @@ namespace ProjectDVLD.Tests.Test_Types
             InitializeComponent();
         }
 
+        private static DataTable dtTestTypesList = clsTestTypeBuisnessLayer.GetAllInfoTestType();
+
+
+        private void _RefreshApplicationTypesList()
+        {
+            dtTestTypesList = clsTestTypeBuisnessLayer.GetAllInfoTestType();
+            dgvTestTypes.DataSource = dtTestTypesList;
+            lblRecordsCount.Text = dgvTestTypes.RowCount.ToString();
+        }
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -25,7 +34,8 @@ namespace ProjectDVLD.Tests.Test_Types
 
         private void frmListTestTypes_Load(object sender, EventArgs e)
         {
-            dgvTestTypes.DataSource = clsTestTypeBuisnessLayer.GetAllInfoTestType();
+
+            _RefreshApplicationTypesList();
 
             dgvTestTypes.Columns[0].HeaderText = "ID";
             dgvTestTypes.Columns[0].Width = 100;
@@ -39,8 +49,22 @@ namespace ProjectDVLD.Tests.Test_Types
             dgvTestTypes.Columns[3].HeaderText = "Fees";
             dgvTestTypes.Columns[3].Width = 100;
 
-            lblRecordsCount.Text = dgvTestTypes.RowCount.ToString();
 
+
+        }
+
+        private void editTestTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmEditTestType = new frmEditTestType((int)dgvTestTypes.CurrentRow.Cells[0].Value);
+            frmEditTestType.ShowDialog();
+            _RefreshApplicationTypesList(); 
+        }
+
+        private void dgvTestTypes_DoubleClick(object sender, EventArgs e)
+        {
+            Form frmEditTestType = new frmEditTestType((int)dgvTestTypes.CurrentRow.Cells[0].Value);
+            frmEditTestType.ShowDialog();
+            _RefreshApplicationTypesList();
         }
     }
 }

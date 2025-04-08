@@ -13,6 +13,7 @@ using ProjectDVLD.Users;
 using ProjectDVLD.Global_Classes;
 using ProjectDVLD.Login;
 using ProjectDVLD.Applications.Application_Types;
+using ProjectDVLD.Tests.Test_Types;
 
 namespace ProjectDVLD
 {
@@ -75,6 +76,12 @@ namespace ProjectDVLD
         {
             Form frmListApplicationTypes = new frmListApplicationTypes();
             frmListApplicationTypes.ShowDialog();
+        }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmListTestTypes = new frmListTestTypes();
+            frmListTestTypes.ShowDialog();
         }
     }
 }
