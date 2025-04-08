@@ -29,3 +29,5 @@ C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVL
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.Applications.Application_Types.frmEditApplicationType.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.Applications.Application_Types.frmListApplicationTypes.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\bin\Release\Sounds\mixkit-fantasy-game-success-notification-270.wav
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.Tests.Test_Types.frmListTestTypes.resources
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Release\ProjectDVLD.Tests.Test_Types.frmEditTestType.resources

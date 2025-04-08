@@ -15,7 +15,7 @@ namespace DVLD_DataAccess
 
 
 
-        static public DataTable GetAllApplicationType()
+        public static DataTable GetAllApplicationType()
         {
 
             DataTable dtApplicationType = new DataTable();

@@ -1,6 +1,7 @@
 ﻿using ProjectDVLD.Applications.Application_Types;
 using ProjectDVLD.Login;
 using ProjectDVLD.People;
+using ProjectDVLD.Tests.Test_Types;
 using ProjectDVLD.Users;
 using System;
 using System.Collections.Generic;
@@ -21,8 +22,8 @@ namespace ProjectDVLD
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main(new frmLogin()));
-            //Application.Run(new frmListApplicationTypes());
-            Application.Run(new frmLogin());
+            Application.Run(new frmListTestTypes());
+            //Application.Run(new frmLogin());
            
         }
     }

@@ -120,6 +120,18 @@
     <Compile Include="People\Controls\ctrlfrmListPeople.Designer.cs">
       <DependentUpon>ctrlfrmListPeople.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Test Types\frmEditTestType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\Test Types\frmEditTestType.Designer.cs">
+      <DependentUpon>frmEditTestType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Test Types\frmListTestTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\Test Types\frmListTestTypes.Designer.cs">
+      <DependentUpon>frmListTestTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\Control\ctrlUserCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -193,6 +205,12 @@
     <EmbeddedResource Include="People\Controls\ctrlfrmListPeople.resx">
       <DependentUpon>ctrlfrmListPeople.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tests\Test Types\frmEditTestType.resx">
+      <DependentUpon>frmEditTestType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\Test Types\frmListTestTypes.resx">
+      <DependentUpon>frmListTestTypes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\Control\ctrlUserCard.resx">
       <DependentUpon>ctrlUserCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +257,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Applications\Controls\" />
+    <Folder Include="Tests\Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
