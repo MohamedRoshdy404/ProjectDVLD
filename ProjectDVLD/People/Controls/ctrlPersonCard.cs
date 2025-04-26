@@ -56,29 +56,70 @@ namespace ProjectDVLD.People.Controls
 
 
 
-        private void _LoadPersonImage()
+        private void _loadImagePerson()
         {
-            if (_Person.Gender == 0)
-                pbPersonImage.Image = Resources.Male_512;
-            else
-                pbPersonImage.Image = Resources.Female_512;
-
             string ImagePath = _Person.ImagePath;
             if (ImagePath != "")
                 if (File.Exists(ImagePath))
                     pbPersonImage.ImageLocation = ImagePath;
                 else
                     MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void _LoadPersonImage()
+        {
+            pbPersonImage.BackgroundImage = null;
+            if (_Person.Gender == 0)
+            {
+                if (_Person.ImagePath != "")
+
+                    _loadImagePerson();
+                else
+                    pbPersonImage.Image = Resources.Male_512;
+            }
+
+            else
+            {
+                if (_Person.ImagePath != "")
+
+                    _loadImagePerson();
+                else
+                    pbPersonImage.Image = Resources.Female_512;
+            }
+
+
 
         }
 
+
+
+        //private void _LoadPersonImage()
+        //{
+        //    if (_Person.Gender == 0)
+        //        pbPersonImage.Image = Resources.Male_512;
+        //    else
+        //        pbPersonImage.Image = Resources.Female_512;
+
+        //    string ImagePath = _Person.ImagePath;
+        //    if (ImagePath != "")
+        //        if (File.Exists(ImagePath))
+        //            pbPersonImage.ImageLocation = ImagePath;
+        //        else
+        //            MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        //}
+
+
+
+
         private void _FillPersonInfo()
         {
+            
             llEditPersonInfo.Enabled = true;
             _PersonID = _Person.PersonID;
             lblPersonID.Text = _Person.PersonID.ToString();
             lblNationalNo.Text = _Person.NationalNo;
-            lblFullName.Text = _Person.FullName ;
+            lblFullName.Text =  _Person.FullName;
             lblGendor.Text = _Person.Gender == 0 ? "Male" : "Female";
             lblEmail.Text = _Person.Email;
             lblPhone.Text = _Person.Phone;

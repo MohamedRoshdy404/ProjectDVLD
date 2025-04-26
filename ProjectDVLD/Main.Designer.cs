@@ -58,6 +58,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbLoggedinUser = new System.Windows.Forms.Label();
             this.lbtxtUserName = new System.Windows.Forms.Label();
+            this.QoickViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +71,7 @@
             this.peopalToolStripMenuItem,
             this.driversToolStripMenuItem,
             this.usersToolStripMenuItem,
+            this.QoickViewToolStripMenuItem,
             this.accountSettingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MinimumSize = new System.Drawing.Size(0, 92);
@@ -337,10 +339,10 @@
             this.lbLoggedinUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbLoggedinUser.AutoSize = true;
             this.lbLoggedinUser.BackColor = System.Drawing.Color.White;
-            this.lbLoggedinUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoggedinUser.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLoggedinUser.Location = new System.Drawing.Point(1326, 676);
             this.lbLoggedinUser.Name = "lbLoggedinUser";
-            this.lbLoggedinUser.Size = new System.Drawing.Size(127, 18);
+            this.lbLoggedinUser.Size = new System.Drawing.Size(129, 24);
             this.lbLoggedinUser.TabIndex = 2;
             this.lbLoggedinUser.Text = "Loggedin User: ";
             // 
@@ -350,11 +352,22 @@
             this.lbtxtUserName.AutoSize = true;
             this.lbtxtUserName.Font = new System.Drawing.Font("Quicksand Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbtxtUserName.ForeColor = System.Drawing.Color.SlateBlue;
-            this.lbtxtUserName.Location = new System.Drawing.Point(1454, 674);
+            this.lbtxtUserName.Location = new System.Drawing.Point(1454, 678);
             this.lbtxtUserName.Name = "lbtxtUserName";
             this.lbtxtUserName.Size = new System.Drawing.Size(31, 23);
             this.lbtxtUserName.TabIndex = 3;
             this.lbtxtUserName.Text = "???";
+            // 
+            // QoickViewToolStripMenuItem
+            // 
+            this.QoickViewToolStripMenuItem.Font = new System.Drawing.Font("Quicksand SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.QoickViewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QoickViewToolStripMenuItem.Image")));
+            this.QoickViewToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.QoickViewToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.QoickViewToolStripMenuItem.Name = "QoickViewToolStripMenuItem";
+            this.QoickViewToolStripMenuItem.Size = new System.Drawing.Size(150, 86);
+            this.QoickViewToolStripMenuItem.Text = "QuickView";
+            this.QoickViewToolStripMenuItem.Click += new System.EventHandler(this.QoickViewToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -414,6 +427,7 @@
         private System.Windows.Forms.ToolStripMenuItem releaseDetainedLicenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageApplicationTypesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageTestTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QoickViewToolStripMenuItem;
     }
 }
 

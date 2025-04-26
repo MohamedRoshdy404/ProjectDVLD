@@ -31,6 +31,8 @@ namespace ProjectDVLD.UserControls
 
         private void _RefreshPeoplList()
         {
+            txtFilter.Visible = false;
+            cbFilterBy.SelectedIndex = 0;
             _dtAllPeople = clsPersonBuisnessLayer.GetAllPeople();
             _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
                                                        "FirstName", "SecondName", "ThirdName", "LastName",
@@ -38,6 +40,7 @@ namespace ProjectDVLD.UserControls
                                                        "Phone", "Email");
             DGVGetAllPeople.DataSource = _dtPeople;
             labRecordsCount.Text = DGVGetAllPeople.Rows.Count.ToString();
+
         }
         private void picBoxAddPerson_Click(object sender, EventArgs e)
         {
@@ -55,6 +58,9 @@ namespace ProjectDVLD.UserControls
 
         private void ctrlfrmListPeople_Load(object sender, EventArgs e)
         {
+
+
+
             DGVGetAllPeople.DataSource = _dtPeople;
             cbFilterBy.SelectedIndex = 0;
             labRecordsCount.Text = _dtPeople.Rows.Count.ToString();
@@ -66,7 +72,7 @@ namespace ProjectDVLD.UserControls
                 DGVGetAllPeople.Columns[0].Width = 110;
 
                 DGVGetAllPeople.Columns[1].HeaderText = "National No";
-                DGVGetAllPeople.Columns[1].Width = 120;
+                DGVGetAllPeople.Columns[1].Width = 150;
 
                 DGVGetAllPeople.Columns[2].HeaderText = "First Name";
                 DGVGetAllPeople.Columns[2].Width = 120;
@@ -75,7 +81,7 @@ namespace ProjectDVLD.UserControls
                 DGVGetAllPeople.Columns[3].Width = 140;
 
                 DGVGetAllPeople.Columns[4].HeaderText = "Third Name";
-                DGVGetAllPeople.Columns[4].Width = 120;
+                DGVGetAllPeople.Columns[4].Width = 150;
 
                 DGVGetAllPeople.Columns[5].HeaderText = "Last Name";
                 DGVGetAllPeople.Columns[5].Width = 120;
@@ -117,8 +123,8 @@ namespace ProjectDVLD.UserControls
 
         private void DGVGetAllPeople_DoubleClick(object sender, EventArgs e)
         {
-            Form frmUpdatePerson = new frmAddUpdatePerson((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
-            frmUpdatePerson.ShowDialog();
+            Form frmShowPersonInfo = new frmShowPersonInfo((int)DGVGetAllPeople.CurrentRow.Cells[0].Value);
+            frmShowPersonInfo.ShowDialog();
             _RefreshPeoplList();
         }
 

@@ -38,7 +38,7 @@ namespace ProjectDVLD.Applications.Application_Types
             dgvApplicationTypes.Columns[0].Width = 100;          
             
             dgvApplicationTypes.Columns[1].HeaderText = "Title";
-            dgvApplicationTypes.Columns[1].Width = 300;
+            dgvApplicationTypes.Columns[1].Width = 400;
 
             dgvApplicationTypes.Columns[2].HeaderText = "Fees";
             dgvApplicationTypes.Columns[2].Width = 100;

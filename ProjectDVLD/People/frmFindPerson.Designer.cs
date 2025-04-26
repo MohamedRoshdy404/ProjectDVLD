@@ -44,11 +44,11 @@
             // labShowPersonInfo
             // 
             this.labShowPersonInfo.AutoSize = true;
-            this.labShowPersonInfo.Font = new System.Drawing.Font("beIN Normal ", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labShowPersonInfo.Font = new System.Drawing.Font("Quicksand", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labShowPersonInfo.ForeColor = System.Drawing.Color.Firebrick;
             this.labShowPersonInfo.Location = new System.Drawing.Point(345, 55);
             this.labShowPersonInfo.Name = "labShowPersonInfo";
-            this.labShowPersonInfo.Size = new System.Drawing.Size(191, 68);
+            this.labShowPersonInfo.Size = new System.Drawing.Size(181, 43);
             this.labShowPersonInfo.TabIndex = 2;
             this.labShowPersonInfo.Text = "Find Person";
             // 

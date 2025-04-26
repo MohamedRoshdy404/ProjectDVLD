@@ -14,6 +14,7 @@ using ProjectDVLD.Global_Classes;
 using ProjectDVLD.Login;
 using ProjectDVLD.Applications.Application_Types;
 using ProjectDVLD.Tests.Test_Types;
+using ProjectDVLD.QuickView;
 
 namespace ProjectDVLD
 {
@@ -82,6 +83,12 @@ namespace ProjectDVLD
         {
             Form frmListTestTypes = new frmListTestTypes();
             frmListTestTypes.ShowDialog();
+        }
+
+        private void QoickViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmQuickView = new frmQuickView();
+            frmQuickView.ShowDialog();
         }
     }
 }

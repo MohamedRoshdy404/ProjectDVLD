@@ -58,7 +58,7 @@ namespace DVLD_DataAccess
 
 
 
-        public static bool FindApplicationType(int ApplicationTypeID, ref string ApplicationTypeTitle, ref decimal ApplicationFees)
+        public static bool FindApplicationTypeByID(int ApplicationTypeID, ref string ApplicationTypeTitle, ref decimal ApplicationFees)
         {
             bool isFound = false;
 

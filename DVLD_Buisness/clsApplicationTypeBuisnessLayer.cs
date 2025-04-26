@@ -56,7 +56,7 @@ namespace DVLD_Buisness
             string ApplicationTypeTitle = "";
             decimal ApplicationFees = 0;
 
-            if (clsApplicationTypeDataAccess.FindApplicationType(ApplicationTypeID, ref ApplicationTypeTitle, ref ApplicationFees))
+            if (clsApplicationTypeDataAccess.FindApplicationTypeByID(ApplicationTypeID, ref ApplicationTypeTitle, ref ApplicationFees))
             {
                 return new clsApplicationTypeBuisnessLayer (ApplicationTypeID, ApplicationTypeTitle, ApplicationFees);
             }

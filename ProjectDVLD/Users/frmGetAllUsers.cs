@@ -68,6 +68,7 @@ namespace ProjectDVLD.Users
             {
                 txtFilter.Visible = (cbFilterBy.Text != "None");
                 txtFilter.Focus();
+                txtFilter.Text = "";
                 cbIsActive.Visible = false;
             }
 
