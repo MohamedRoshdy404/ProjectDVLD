@@ -15,6 +15,7 @@ using ProjectDVLD.Login;
 using ProjectDVLD.Applications.Application_Types;
 using ProjectDVLD.Tests.Test_Types;
 using ProjectDVLD.QuickView;
+using ProjectDVLD.Applications.Local_Driving_License;
 
 namespace ProjectDVLD
 {
@@ -89,6 +90,13 @@ namespace ProjectDVLD
         {
             Form frmQuickView = new frmQuickView();
             frmQuickView.ShowDialog();
+        }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form NewLocalDrivingLicesnseApplication = new frmAddUpdateLocalDrivingLicesnseApplication();
+            NewLocalDrivingLicesnseApplication.ShowDialog();
+
         }
     }
 }

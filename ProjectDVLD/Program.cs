@@ -1,4 +1,5 @@
 ﻿using ProjectDVLD.Applications.Application_Types;
+using ProjectDVLD.Applications.Local_Driving_License;
 using ProjectDVLD.Login;
 using ProjectDVLD.People;
 using ProjectDVLD.Tests.Test_Types;
@@ -21,7 +22,7 @@ namespace ProjectDVLD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Main());
+            //Application.Run(new frmAddUpdateLocalDrivingLicesnseApplication());
             Application.Run(new frmLogin());
            
         }

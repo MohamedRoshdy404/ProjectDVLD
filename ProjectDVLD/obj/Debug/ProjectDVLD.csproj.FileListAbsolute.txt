@@ -32,3 +32,4 @@ C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\bin\Debug\Sounds\mixki
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Tests.Test_Types.frmListTestTypes.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Tests.Test_Types.frmEditTestType.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.QuickView.frmQuickView.resources
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Applications.Local_Driving_License.frmAddUpdateLocalDrivingLicesnseApplication.resources

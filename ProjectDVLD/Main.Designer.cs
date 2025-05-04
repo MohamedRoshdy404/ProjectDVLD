@@ -51,6 +51,7 @@
             this.peopalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QoickViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.currentUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +59,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbLoggedinUser = new System.Windows.Forms.Label();
             this.lbtxtUserName = new System.Windows.Forms.Label();
-            this.QoickViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -130,6 +130,7 @@
             this.localLicenseToolStripMenuItem.Name = "localLicenseToolStripMenuItem";
             this.localLicenseToolStripMenuItem.Size = new System.Drawing.Size(253, 38);
             this.localLicenseToolStripMenuItem.Text = "&Local License";
+            this.localLicenseToolStripMenuItem.Click += new System.EventHandler(this.localLicenseToolStripMenuItem_Click);
             // 
             // internationalLicenseToolStripMenuItem
             // 
@@ -281,6 +282,17 @@
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
+            // QoickViewToolStripMenuItem
+            // 
+            this.QoickViewToolStripMenuItem.Font = new System.Drawing.Font("Quicksand SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.QoickViewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QoickViewToolStripMenuItem.Image")));
+            this.QoickViewToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.QoickViewToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.QoickViewToolStripMenuItem.Name = "QoickViewToolStripMenuItem";
+            this.QoickViewToolStripMenuItem.Size = new System.Drawing.Size(150, 86);
+            this.QoickViewToolStripMenuItem.Text = "QuickView";
+            this.QoickViewToolStripMenuItem.Click += new System.EventHandler(this.QoickViewToolStripMenuItem_Click);
+            // 
             // accountSettingsToolStripMenuItem
             // 
             this.accountSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -357,17 +369,6 @@
             this.lbtxtUserName.Size = new System.Drawing.Size(31, 23);
             this.lbtxtUserName.TabIndex = 3;
             this.lbtxtUserName.Text = "???";
-            // 
-            // QoickViewToolStripMenuItem
-            // 
-            this.QoickViewToolStripMenuItem.Font = new System.Drawing.Font("Quicksand SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.QoickViewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("QoickViewToolStripMenuItem.Image")));
-            this.QoickViewToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.QoickViewToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.QoickViewToolStripMenuItem.Name = "QoickViewToolStripMenuItem";
-            this.QoickViewToolStripMenuItem.Size = new System.Drawing.Size(150, 86);
-            this.QoickViewToolStripMenuItem.Text = "QuickView";
-            this.QoickViewToolStripMenuItem.Click += new System.EventHandler(this.QoickViewToolStripMenuItem_Click);
             // 
             // Main
             // 

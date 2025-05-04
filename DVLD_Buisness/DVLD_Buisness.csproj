@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="clsApplicationTypeBuisnessLayer.cs" />
     <Compile Include="clsCountriesBuisnessLayer.cs" />
+    <Compile Include="clsLicenseClassBuisnessLayer.cs" />
     <Compile Include="clsPersonBuisnessLayer.cs" />
     <Compile Include="clsTestTypeBuisnessLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
