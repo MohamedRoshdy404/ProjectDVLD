@@ -38,7 +38,7 @@ namespace ProjectDVLD.Applications.Local_Driving_License
 
             if (Person != null)
             {
-                lblLocalDrivingLicebseApplicationID.Text = Person.PersonID.ToString();
+                //lblLocalDrivingLicebseApplicationID.Text = Person.PersonID.ToString();
                 lblCreatedByUser.Text = clsUserInfo.UserName;
                 tcApplicationInfo.SelectedTab = tpApplicationInfo;
                 tcApplicationInfo.TabPages["tpApplicationInfo"].Enabled = true;
@@ -46,6 +46,25 @@ namespace ProjectDVLD.Applications.Local_Driving_License
                 _FillLicenseClassIncomboBox();
             }
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbLicenseClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            clsLicenseClassBuisnessLayer leicense = clsLicenseClassBuisnessLayer.FindLicenseClassesByClassName(cbLicenseClass.SelectedItem.ToString());
+
+            if (leicense == null)
+            {
+                MessageBox.Show("Sorry, the license type was not found. Please try again correctly.", "ERROR" , MessageBoxButtons.OK , MessageBoxIcon.Error);
+                return;
+            }
+
+            lblFees.Text = leicense.ClassFees.ToString();
         }
     }
 }

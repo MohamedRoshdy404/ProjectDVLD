@@ -116,6 +116,7 @@
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(214, 26);
             this.txtFilterValue.TabIndex = 21;
+            this.txtFilterValue.Text = "n1";
             // 
             // ctrlPersonCard1
             // 
