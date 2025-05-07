@@ -33,3 +33,4 @@ C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Tests.Test_Types.frmEditTestType.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.QuickView.frmQuickView.resources
 C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Applications.Local_Driving_License.frmAddUpdateLocalDrivingLicesnseApplication.resources
+C:\Users\Programming\source\repos\ProjectDVLD\ProjectDVLD\obj\Debug\ProjectDVLD.Applications.frmApps.resources
