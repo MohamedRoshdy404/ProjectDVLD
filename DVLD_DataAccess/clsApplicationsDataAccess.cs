@@ -11,23 +11,6 @@ namespace DVLD_DataAccess
     public class clsApplicationsDataAccess
     {
 
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 751962c (Save local changes before pull)
         public static bool GetApplicationInfoByID(int ApplicationID,
            ref int ApplicantPersonID, ref DateTime ApplicationDate, ref int ApplicationTypeID,
            ref byte ApplicationStatus, ref DateTime LastStatusDate,

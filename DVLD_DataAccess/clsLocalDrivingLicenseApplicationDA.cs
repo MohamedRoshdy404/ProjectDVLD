@@ -11,12 +11,6 @@ namespace DVLD_DataAccess
     public class clsLocalDrivingLicenseApplicationDA
     {
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 751962c (Save local changes before pull)
         public static bool GetLocalDrivingLicenseApplicationInfoByID(
            int LocalDrivingLicenseApplicationID, ref int ApplicationID,
            ref int LicenseClassID)
