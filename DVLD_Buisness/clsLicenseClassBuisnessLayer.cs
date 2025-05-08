@@ -49,6 +49,22 @@ namespace DVLD_Buisness
 
 
 
+               
+        
+        public clsLicenseClassBuisnessLayer(int LicenseClassID, string ClassName, string ClassDescription, byte MinimumAllowedAge, byte DefaultValidityLength,  decimal ClassFees)
+        {
+            this.LicenseClassID = LicenseClassID;
+            this.ClassName = ClassName;
+            this.ClassDescription =ClassDescription;
+            this.MinimumAllowedAge = MinimumAllowedAge;
+            this.DefaultValidityLength = DefaultValidityLength;
+            this.ClassFees = ClassFees;
+            Mode = enMode.Update;
+        }
+
+
+
+
 
 
         public static DataTable GetAllLicenseClasses()
@@ -69,6 +85,28 @@ namespace DVLD_Buisness
             if (clsLicenseClassDataAccess.FindLicenseClassesByClassName(ClassName , ref LicenseClassID, ref  ClassDescription, ref   MinimumAllowedAge, ref  DefaultValidityLength, ref  ClassFees))
             {
                 return new clsLicenseClassBuisnessLayer(ClassName , LicenseClassID , ClassDescription , MinimumAllowedAge, DefaultValidityLength,  ClassFees);
+            }
+            else
+            {
+                return null;
+            }
+
+
+        }
+
+
+
+        
+        public static clsLicenseClassBuisnessLayer Find(int LicenseClassID)
+        {
+            string ClassName = "";
+            string ClassDescription = string.Empty;
+            byte MinimumAllowedAge = 0,  DefaultValidityLength = 0;
+            decimal ClassFees = 0;
+
+            if (clsLicenseClassDataAccess.Find(LicenseClassID, ref ClassName, ref  ClassDescription, ref   MinimumAllowedAge, ref  DefaultValidityLength, ref  ClassFees))
+            {
+                return new clsLicenseClassBuisnessLayer(LicenseClassID, ClassName, ClassDescription , MinimumAllowedAge, DefaultValidityLength,  ClassFees);
             }
             else
             {
